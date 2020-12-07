@@ -1,0 +1,856 @@
+$global-width: 1400px;
+
+$foundation-palette: (
+  primary: #1a1d4a,
+  secondary: #BF0000,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+$body-font-family: 'Avenir', sans-serif;
+$paragraph-lineheight: 1.4;
+$header-font-family: "ITC Avant Garde Gothic W01 Dm", sans-serif;
+$header-lineheight: 1.1;
+$header-margin-bottom: 0.3rem;
+$input-placeholder-color: #666;
+
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+);
+
+
+/* mixins */
+@mixin grey-gradient {
+	background: transparent linear-gradient(180deg, #F0F0F0 0%, #EFEFEF 100%) 0% 0% no-repeat padding-box;
+}
+
+/* local variables */
+$nav-font-size: 13px;
+
+/* Fonts.com */
+@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=bdccd2bb-0d3b-469e-9eb0-f7f34fa85e05&fontids=1564323,1564335");
+@font-face{
+	font-family:"ITC Avant Garde Gothic W01 Md";
+	src:url("../webfonts/1564323/39dda6db-d579-4a2e-b67c-abf7d732b97c.woff2") format("woff2"),url("../webfonts/1564323/6cf5eb52-bda1-4506-b101-1cb1cb9ac146.woff") format("woff");
+}
+@font-face{
+	font-family:"ITC Avant Garde Gothic W01 Dm";
+	src:url("../webfonts/1564335/8bfba692-98b4-401d-b187-205f59d508cf.woff2") format("woff2"),url("../webfonts/1564335/29cf02ec-9cbf-449b-abff-06b4ab9b1cc0.woff") format("woff");
+}
+
+
+
+/* Foundation */
+@import 'foundation';
+@include foundation-everything;
+
+
+/* font awesome */
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
+@import "./fontawesome/brands.scss";
+
+img {
+	image-rendering: -moz-crisp-edges;         /* Firefox */
+	image-rendering:   -o-crisp-edges;         /* Opera */
+	image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+	image-rendering: crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+
+body {
+	background: #ccc;
+}
+
+/* typography */
+p {
+	font-size: 14px;
+	font-weight: 500;
+
+	@include breakpoint(medium) {
+		font-size: 15px;
+	}
+}
+
+.feature-headline {
+	font-size: rem-calc(30);
+
+	@include breakpoint(large) {
+		font-size: rem-calc(40);
+	}
+}
+
+.disclaimer {
+	text-align: left;
+	font-size: 11px;
+
+	@include breakpoint(medium) {
+		font-size: 13px;
+	}
+}
+
+.sub-head {
+	font-family: $header-font-family;
+	color: $primary-color;
+	font-size: 24px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 10px;
+
+	hr {
+		width: 55px;
+		border-top: 2px solid $secondary-color;
+		margin: 5px auto;
+	}
+}
+
+.sub-head-desc {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+
+	@include breakpoint(large) {
+		width: 60%;
+	}
+}
+
+.text-link {
+	color: $primary-color;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.container-inner {
+	padding: 0;
+}
+
+.main-container {
+	background: #fff;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+}
+
+.nav-bar {
+	width: 100%;
+	height: 66px;
+	background: $primary-color;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.logo-outer {
+	position: relative;
+	display: flex;
+	z-index: 2;
+}
+
+.logo-container {
+	position: absolute;
+	left: 5%;
+	width: 20%;
+	background: #fff 0% 0% no-repeat padding-box;
+	border-radius: 0px 0px 10px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #aaa;
+}
+
+.top-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-right: 20px;
+
+	li {
+		a {
+			color: #fff;
+			font-weight: 900;
+			text-transform: uppercase;
+			padding: 12px 9px;
+			font-size: $nav-font-size;
+
+			&:hover {
+				color: darken(#fff, 40%);
+				transition: background .5s, color .5s;
+			}
+
+			&.donate-button {
+				background: $secondary-color;
+				margin-right: 20px;
+
+				&:hover {
+					background: darken($secondary-color, 20%);
+				}
+			}
+
+			&.social {
+				padding: 9px;
+				font-size: 22px;
+			}
+		}
+	}
+}
+
+.logo {
+	padding: 20px 30px;
+}
+
+.small-header {
+	align-items: center;
+  justify-content: space-between;
+}
+
+.feature {
+	position: relative;
+	z-index: 0;
+
+	picture, img {
+		width: 100%;
+		height: auto;
+	}
+
+	.copy {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		text-align: center;
+		color: #fff;
+		width: 90%;
+		max-width: 900px;
+		top: 65%;
+
+		@include breakpoint(medium) {
+			width: 80%;
+			top: 60%;
+		}
+
+		h1 {
+			@extend .feature-headline;
+		}
+
+		h2 {
+			font-family: $body-font-family;
+			font-weight: bold;
+			letter-spacing: .5px;
+			font-size: 12px;
+
+			@include breakpoint(medium) {
+				font-size: 13px;
+			}
+
+			@include breakpoint(large) {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+.hp-donate-bar {
+	background: $primary-color;
+	padding: 40px 0;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.inner {
+		width: 90%;
+		margin: 0 auto;
+
+		@include breakpoint(large) {
+			width: 75%;
+		}
+	}
+}
+
+.donate-bar {
+	background: url('/images/donate-bg.jpg');
+	background-size: cover;
+	background-color: $primary-color;
+	padding: 60px 0;
+	width: 100%;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	.inner {
+		margin: 0 auto;
+		width: 80%;
+
+		@include breakpoint(medium) {
+			width: 70%;
+		}
+
+		@include breakpoint(large) {
+			width: 50%;
+		}
+	}
+
+	.donate-button-group {
+		justify-content: center;
+	}
+}
+
+.donate-button-group {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+
+	li {
+		margin-left: -2px;
+
+		@include breakpoint(small only) {
+			width: 100%;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+
+.hp-signup-bar {
+	background: $secondary-color;
+	background:  url('/images/hp-signup-background.jpg');
+	background-size: cover;
+	z-index: 2;
+
+	@include breakpoint(large) {
+		margin-top: -70px;
+	}
+
+	.inner {
+		width: 90%;
+		padding: 30px 0;
+		margin: 0 auto;
+		text-align: center;
+		color: #fff;
+
+		h3 {
+			text-transform: uppercase;
+			font-size: 42px;
+		}
+	}
+
+	form {
+		input {
+			border: none;
+			margin-bottom: 10px;
+		}
+
+		.double-inputs {
+			display: flex;
+			flex-direction: row;
+
+			input {
+				&:first-child {
+					margin-right: 7px;
+				}
+			}
+		}
+	}
+}
+
+.hp-section {
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+}
+
+.accomplishments-hp {
+	@include grey-gradient;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 30px 0;
+		display: flex;
+  	flex-wrap: wrap;
+  	justify-content: space-between;
+
+		.inner {
+			margin: 20px;
+		}
+	}
+}
+
+.accomplishments-item {
+	background: #fff;
+	border-radius: 10px;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+  transition: transform .3s;
+  cursor: pointer;
+
+  @include breakpoint(small only) {
+  	margin-bottom: 1rem;
+  }
+
+  h4 {
+  	color: $primary-color;
+  	font-size: 20px;
+  }
+
+	&:hover {
+		transform: scale(1.03);
+	}
+
+	@include breakpoint(medium) {
+		width: calc((100% / 2) - (2rem / 2));
+    margin-left: .5rem;
+    margin-right: .5rem;
+	}
+
+	@include breakpoint(large) {
+		width: calc((100% / 4) - (4rem / 4));
+	}
+}
+
+.whyrunning-hp {
+	text-align: center;
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	z-index: 2;
+
+	.video-outer {
+		justify-content: center;
+		margin: 30px auto;
+	}
+
+	.video-container {
+		position: relative;
+
+		.icon {
+			font-size: 33px;
+			color: #fff;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	}
+}
+
+.videos-bg {
+	background: $primary-color;
+	height: 50%;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.facebook-hp {
+	@include grey-gradient;
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 30px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+}
+
+.social-item {
+	background: #fff;
+	border-radius: 10px;
+	text-align: center;
+	width: 100%;
+  margin-bottom: 1rem;
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		width: 90%;
+		margin: 20px auto;
+		justify-content: center;
+		align-items: center;
+
+		.social-profile-pic {
+			width: 15%;
+			height: auto;
+		}
+
+		.social-account-info {
+			width: 85%;
+			text-align: left;
+			margin-left: 10px;
+
+			h4 {
+				font-family:"ITC Avant Garde Gothic W01 Dm";
+				font-size: 17px;
+				color: $primary-color;
+			}
+
+			p {
+				font-size: 13px;
+				color: #919191;
+			}
+
+			h4, p {
+				margin-bottom: 0;
+			}
+		}
+
+	}
+
+	.inner {
+		width: 90%;
+		margin: 20px auto;
+		text-align: left;
+	}
+
+	.fb-controls {
+		margin: 10px 0;
+		width: 40%;
+	}
+
+	@include breakpoint(medium) {
+		width: calc((100% / 3) - (3rem / 3));
+    margin-left: .5rem;
+    margin-right: .5rem;
+	}
+}
+
+.quote-bar {
+	background: $primary-color;
+
+	.inner {
+		width: 80%;
+		padding: 30px 0;
+		margin: 0 auto;
+
+		@include breakpoint(medium) {
+			width: 70%;
+		}
+
+		@include breakpoint(large) {
+			width: 60%;
+		}
+
+		h4 {
+			color: #fff;
+			text-align: center;
+			font-size: 23px;
+			font-family: "ITC Avant Garde Gothic W01 Md";
+		}
+
+		.attribute {
+			color: #08ABF4;
+			font-family: "ITC Avant Garde Gothic W01 Dm";
+			font-size: 16px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.news-section {
+	@include grey-gradient;
+
+	.news-container {
+		display: flex;
+		justify-content: center;
+		margin: 20px 0;
+	}
+
+	.news-item {
+		background: #fff;
+		min-height: 100px;
+		margin: 10px;
+		padding: 20px;
+		text-align: left;
+		transition: transform .3s;
+
+		a {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&:hover {
+			transform: scale(1.03);
+		}
+
+		img {
+			width: 30%;
+		}
+
+		.copy {
+			margin-left: 20px;
+		}
+
+		h4 {
+			font-weight: bold;
+			color: $primary-color;
+			font-size: 15px;
+
+			@include breakpoint(medium) {
+				font-size: 18px;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		.byline {
+			font-size: 11px;
+			color: #717171;
+			font-weight: bold;
+			margin-bottom: 3px;
+		}
+	}
+}
+
+.newsletter-bar {
+	@include grey-gradient;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0;
+
+	@include breakpoint(medium) {
+		flex-direction: row;
+	}
+
+	h4 {
+		font-size: 16px;
+		color: $primary-color;
+		margin: 0 10px 10px 0;
+		text-transform: uppercase;
+
+		@include breakpoint(medium) {
+			margin-bottom: 0;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 80%;
+
+		@include breakpoint(medium) {
+			width: 50%;
+		}
+
+		@include breakpoint(large) {
+			width: 35%;
+		}
+	}
+
+	.input-email {
+		margin-bottom: 0;
+		height: 47px;
+	}
+}
+
+/* buttons */
+.button {
+  padding: 14px 27px;
+  font-family: $body-font-family;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  transition: background .3s color .3s;
+
+  &.condensed {
+  	padding-left: 24px;
+  	padding-right: 24px;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.full-width-small {
+  	@include breakpoint(small only) {
+  		width: 100%;
+		}
+  }
+  
+  &.no-left-border {
+    margin-left: -2px;
+  }
+  
+  &.solid-primary {
+    border: 2px solid $primary-color;
+    background: $primary-color;
+    color: #fff;
+    
+    &:hover {
+      background: darken($primary-color, 5%);
+    }
+  }
+
+  &.solid-secondary {
+    border: 2px solid $secondary-color;
+    background: $secondary-color;
+    color: #fff;
+    
+    &:hover {
+      background: darken($secondary-color, 5%);
+    }
+  }
+
+  &.solid-white {
+    border: 2px solid #fff;
+    background: #fff;
+    color: #fff;
+  }
+  
+  &.outline-primary {
+    border: 2px solid $primary-color;
+    background: none;
+    color: $primary-color;
+
+    &:hover {
+    	background: $primary-color;
+    	color: #fff;
+    }
+  }
+  
+  &.outline-secondary {
+    border: 2px solid $secondary-color;
+    background: none;
+    color: $secondary-color;
+
+    &:hover {
+    	background: $secondary-color;
+    	color: #fff;
+    }
+  }
+  
+  &.outline-white {
+    border: 2px solid #fff;
+    background: none;
+    color: #fff;
+
+    &:hover {
+    	background: #fff;
+    	color: $primary-color;
+    }
+  }
+  
+  &.fill-primary {
+    background: $primary-color;
+  }
+  
+  &.fill-secondary {
+    background: $secondary-color;
+  }
+  
+  &.fill-white {
+    background: #fff;
+  }
+ 
+
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paid-for {
+	border: 1px solid $primary-color;
+	color: $primary-color;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	margin: 30px auto;
+	display: inline-block;
+}
+
+/* ICONS */
+.brands-icon {
+	@extend %fa-icon;
+  @extend .fab;
+
+  &.facebook {
+  	&:before {
+	    content: fa-content($fa-var-facebook-f);
+	  }
+  }
+
+  &.twitter {
+  	&:before {
+	    content: fa-content($fa-var-twitter);
+	  }
+  }
+
+  &.instagram {
+  	&:before {
+	    content: fa-content($fa-var-instagram);
+	  }
+  }
+
+  &.youtube {
+  	&:before {
+	    content: fa-content($fa-var-youtube);
+	  }
+  }
+}
+
+.icon {
+	@extend %fa-icon;
+  @extend .fas;
+
+  &.envelope {
+  	&:before {
+	    content: fa-content($fa-var-envelope);
+	  }
+  }
+
+  &.play {
+  	&:before {
+	    content: fa-content($fa-var-play);
+	  }
+  }
+}
