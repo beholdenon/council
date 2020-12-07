@@ -8,7 +8,8 @@ $foundation-palette: (
   alert: #cc4b37,
 );
 
-$body-font-family: 'Avenir', sans-serif;
+$body-font-bold-family: 'AvenirLTPro-Heavy', sans-serif;
+$body-font-family: 'AvenirLTPro-Roman', sans-serif;
 $paragraph-lineheight: 1.4;
 $header-font-family: "ITC Avant Garde Gothic W01 Dm", sans-serif;
 $header-lineheight: 1.1;
@@ -54,10 +55,24 @@ $nav-font-size: 13px;
 	src:url("../webfonts/1564335/8bfba692-98b4-401d-b187-205f59d508cf.woff2") format("woff2"),url("../webfonts/1564335/29cf02ec-9cbf-449b-abff-06b4ab9b1cc0.woff") format("woff");
 }
 
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3ccaeb");
+  
+@font-face {
+  font-family: 'AvenirLTPro-Heavy';
+  src: url('../webfonts/AvenirLTPro-Heavy/font.woff2') format('woff2'), url('../webfonts/AvenirLTPro-Heavy/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'AvenirLTPro-Roman';
+  src: url('../webfonts/AvenirLTPro-Roman/font.woff2') format('woff2'), url('../webfonts/AvenirLTPro-Roman/font.woff') format('woff');
+}
+
+/* aos */
+@import './aos/aos';
 
 
 /* Foundation */
-@import 'foundation';
+@import './foundation/foundation';
 @include foundation-everything;
 
 
@@ -132,9 +147,9 @@ p {
 }
 
 .text-link {
+	font-family: $body-font-bold-family;
+	font-size: rem-calc(16);
 	color: $primary-color;
-	font-size: 16px;
-	font-weight: bold;
 	text-decoration: underline;
 }
 
@@ -232,36 +247,33 @@ p {
 	}
 
 	.copy {
+		width: 90%;
+		max-width: 900px;
 		position: absolute;
+		top: 65%;
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		text-align: center;
 		color: #fff;
-		width: 90%;
-		max-width: 900px;
-		top: 65%;
 
 		@include breakpoint(medium) {
 			width: 80%;
 			top: 60%;
 		}
 
-		h1 {
-			@extend .feature-headline;
-		}
-
 		h2 {
-			font-family: $body-font-family;
-			font-weight: bold;
+			font-family: $body-font-bold-family;
+			font-size: rem-calc(12);
+			font-weight: normal;
 			letter-spacing: .5px;
-			font-size: 12px;
+			margin-top: 10px;
 
 			@include breakpoint(medium) {
-				font-size: 13px;
+				font-size: rem-calc(13);
 			}
 
 			@include breakpoint(large) {
-				font-size: 15px;
+				font-size: rem-calc(17);
 			}
 		}
 	}
@@ -414,10 +426,7 @@ p {
 	overflow: hidden;
   transition: transform .3s;
   cursor: pointer;
-
-  @include breakpoint(small only) {
-  	margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 
   h4 {
   	color: $primary-color;
@@ -436,6 +445,7 @@ p {
 
 	@include breakpoint(large) {
 		width: calc((100% / 4) - (4rem / 4));
+		margin-bottom: 0;
 	}
 }
 
@@ -596,17 +606,17 @@ p {
 		margin: 10px;
 		padding: 20px;
 		text-align: left;
-		transition: transform .3s;
 
 		a {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
-		}
 
-		&:hover {
-			transform: scale(1.03);
+			&:hover {
+				transition: transform .3s;
+				transform: scale(1.03);
+			}
 		}
 
 		img {
@@ -632,9 +642,9 @@ p {
 		}
 
 		.byline {
-			font-size: 11px;
+			font-family: $body-font-bold-family;
+			font-size: rem-calc(11);
 			color: #717171;
-			font-weight: bold;
 			margin-bottom: 3px;
 		}
 	}
@@ -653,7 +663,7 @@ p {
 	}
 
 	h4 {
-		font-size: 16px;
+		font-size: rem-calc(16);
 		color: $primary-color;
 		margin: 0 10px 10px 0;
 		text-transform: uppercase;
@@ -687,16 +697,18 @@ p {
 
 /* buttons */
 .button {
-  padding: 14px 27px;
-  font-family: $body-font-family;
+	font-family: $body-font-bold-family;
+	font-size: rem-calc(15);
+  padding: 14px 27px 11px 27px;
   text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 900;
   text-decoration: none;
   display: inline-block;
   text-align: center;
   margin: 0;
-  transition: background .3s color .3s;
+
+  &:hover {
+  	transition: background .3s color .3s;
+  }
 
   &.condensed {
   	padding-left: 24px;
@@ -798,12 +810,12 @@ p {
 }
 
 .paid-for {
+	font-family: $body-font-bold-family;
 	border: 1px solid $primary-color;
 	color: $primary-color;
-	font-size: 14px;
-	font-weight: bold;
+	font-size: rem-calc(14);
 	text-transform: uppercase;
-	padding: 4px 10px;
+	padding: 4px 10px 2px 10px;
 	margin: 30px auto;
 	display: inline-block;
 }
