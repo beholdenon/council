@@ -105,10 +105,10 @@ p {
 }
 
 .feature-headline {
-	font-size: rem-calc(30);
+	font-size: rem-calc(27);
 
 	@include breakpoint(large) {
-		font-size: rem-calc(40);
+		font-size: rem-calc(35);
 	}
 }
 
@@ -248,7 +248,7 @@ p {
 
 	.copy {
 		width: 90%;
-		max-width: 900px;
+		max-width: 920px;
 		position: absolute;
 		top: 65%;
 		left: 50%;
@@ -578,15 +578,23 @@ p {
 		h4 {
 			color: #fff;
 			text-align: center;
-			font-size: 23px;
+			font-size: rem-calc(17);
 			font-family: "ITC Avant Garde Gothic W01 Md";
+
+			@include breakpoint(medium) {
+				font-size: rem-calc(23);
+			}
 		}
 
 		.attribute {
 			color: #08ABF4;
 			font-family: "ITC Avant Garde Gothic W01 Dm";
-			font-size: 16px;
+			font-size: rem-calc(13);
 			margin-bottom: 0;
+
+			@include breakpoint(medium) {
+				font-size: rem-calc(16);
+			}
 		}
 	}
 }
@@ -801,6 +809,12 @@ p {
   }
  
 
+}
+
+.donate-iframe {
+	width: 100%;
+	height: 3000px;
+	overflow: hidden;
 }
 
 .footer {

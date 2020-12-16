@@ -5,10 +5,15 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "config": {
+    "accessToken": "0e3ec801b5af550c8a1257e8623b1c77ac9b3d8fcfc1b2b7494e3cb77878f92a",
+    "space": "wl1z0pal05vy"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "aos": "^2.3.4",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.21.0",
+    "contentful": "^8.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

@@ -10092,10 +10092,10 @@ p {
       font-size: 15px; } }
 
 .feature-headline {
-  font-size: 1.875rem; }
+  font-size: 1.6875rem; }
   @media print, screen and (min-width: 64em) {
     .feature-headline {
-      font-size: 2.5rem; } }
+      font-size: 2.1875rem; } }
 
 .disclaimer {
   text-align: left;
@@ -10202,7 +10202,7 @@ p {
     height: auto; }
   .feature .copy {
     width: 90%;
-    max-width: 900px;
+    max-width: 920px;
     position: absolute;
     top: 65%;
     left: 50%;
@@ -10441,13 +10441,19 @@ p {
     .quote-bar .inner h4 {
       color: #fff;
       text-align: center;
-      font-size: 23px;
+      font-size: 1.0625rem;
       font-family: "ITC Avant Garde Gothic W01 Md"; }
+      @media print, screen and (min-width: 40em) {
+        .quote-bar .inner h4 {
+          font-size: 1.4375rem; } }
     .quote-bar .inner .attribute {
       color: #08ABF4;
       font-family: "ITC Avant Garde Gothic W01 Dm";
-      font-size: 16px;
+      font-size: 0.8125rem;
       margin-bottom: 0; }
+      @media print, screen and (min-width: 40em) {
+        .quote-bar .inner .attribute {
+          font-size: 1rem; } }
 
 .news-section {
   background: transparent linear-gradient(180deg, #F0F0F0 0%, #EFEFEF 100%) 0% 0% no-repeat padding-box; }
@@ -10587,6 +10593,11 @@ p {
     background: #BF0000; }
   .button.fill-white {
     background: #fff; }
+
+.donate-iframe {
+  width: 100%;
+  height: 3000px;
+  overflow: hidden; }
 
 .footer {
   display: flex;

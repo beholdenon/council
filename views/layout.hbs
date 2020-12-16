@@ -8,13 +8,11 @@
     <link rel='stylesheet' href='/stylesheets/styles.css' />
   </head>
   <body>
-
-
   	<div class="grid-container full">
 		  <div class="grid-x">
 		  	<div class="cell">
 
-
+		  		{{!- main container --}}
 		  		<div class="grid-container container-inner main-container">
 		  			<div class="grid-x">
 		  				<div class="cell">
@@ -22,7 +20,9 @@
 					  		<div class="grid-container container-inner">
 								  <div class="grid-x small-header hide-for-large">
 								  	<div class="cell small-6 medium-4">
-								  		<img src="/images/robert-holden-city-council-logo.png" class="logo" alt="Robert Holden For City Council - District 30">
+								  		<a href="/">
+								  			<img src="/images/robert-holden-city-council-logo.png" class="logo" alt="Robert Holden For City Council - District 30">
+								  		</a>
 								  	</div>
 								  	<div class="cell small-3 medium-2">
 								  		<a href="#" class="button solid-secondary">
@@ -38,17 +38,17 @@
 								    	<div class="nav-bar show-for-large">
 								    		<nav>
 									    		<ul class="top-nav">
-									    			<li><a href="#">Bio</a></li>
+									    			<!--<li><a href="#">Bio</a></li>
 									    			<li><a href="#">Accomplishments</a></li>
 									    			<li><a href="#">News</a></li>
 									    			<li><a href="#">Events</a></li>
 									    			<li><a href="#">Volunteer</a></li>
-									    			<li><a href="#">Contact</a></li>
-									    			<li><a href="#" class="donate-button">Donate</a></li>
-									    			<li><a href="#" class="social"><i class="brands-icon facebook"></i></a></li>
-									    			<li><a href="#" class="social"><i class="brands-icon twitter"></i></a></li>
-									    			<li><a href="#" class="social"><i class="brands-icon instagram"></i></a></li>
-									    			<li><a href="#" class="social"><i class="brands-icon youtube"></i></a></li>
+									    			<li><a href="#">Contact</a></li>-->
+									    			<li><a href="/donate" class="donate-button">Donate</a></li>
+									    			<li><a href="https://www.facebook.com/bobholdencitycouncil" class="social"><i class="brands-icon facebook"></i></a></li>
+									    			<li><a href="https://twitter.com/BobHoldenNYC" class="social"><i class="brands-icon twitter"></i></a></li>
+									    			<li><a href="https://www.instagram.com/bobholdennyc/" class="social"><i class="brands-icon instagram"></i></a></li>
+									    			<li><a href="https://www.youtube.com/channel/UChtcvj3BHabKO0T8oDN-wQg" class="social"><i class="brands-icon youtube"></i></a></li>
 									    		</ul>
 									    	</nav>
 								    	</div>
@@ -72,6 +72,7 @@
 		    </div>
 		  </div>
 		</div>
+		<script src="/javascripts/app.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
 		AOS.init();
