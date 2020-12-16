@@ -376,6 +376,10 @@ p {
 		input {
 			border: none;
 			margin-bottom: 10px;
+
+			&.error {
+				border: 1px solid #00ff00;
+			}
 		}
 
 		.double-inputs {
