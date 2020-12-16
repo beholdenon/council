@@ -108,7 +108,7 @@ p {
 	font-size: rem-calc(27);
 
 	@include breakpoint(large) {
-		font-size: rem-calc(35);
+		font-size: rem-calc(38);
 	}
 }
 
@@ -248,7 +248,7 @@ p {
 
 	.copy {
 		width: 90%;
-		max-width: 920px;
+		max-width: 1000px;
 		position: absolute;
 		top: 65%;
 		left: 50%;
@@ -378,7 +378,7 @@ p {
 			margin-bottom: 10px;
 
 			&.error {
-				border: 1px solid #00ff00;
+				border: 2px solid #00ff00;
 			}
 		}
 

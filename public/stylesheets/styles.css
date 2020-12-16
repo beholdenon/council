@@ -10095,7 +10095,7 @@ p {
   font-size: 1.6875rem; }
   @media print, screen and (min-width: 64em) {
     .feature-headline {
-      font-size: 2.1875rem; } }
+      font-size: 2.375rem; } }
 
 .disclaimer {
   text-align: left;
@@ -10202,7 +10202,7 @@ p {
     height: auto; }
   .feature .copy {
     width: 90%;
-    max-width: 920px;
+    max-width: 1000px;
     position: absolute;
     top: 65%;
     left: 50%;
@@ -10299,7 +10299,7 @@ p {
     border: none;
     margin-bottom: 10px; }
     .hp-signup-bar form input.error {
-      border: 1px solid #00ff00; }
+      border: 2px solid #00ff00; }
   .hp-signup-bar form .double-inputs {
     display: flex;
     flex-direction: row; }
