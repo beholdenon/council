@@ -263,10 +263,11 @@ p {
 
 		h2 {
 			font-family: $body-font-bold-family;
-			font-size: rem-calc(12);
+			font-size: rem-calc(13);
 			font-weight: normal;
 			letter-spacing: .5px;
-			margin-top: 10px;
+			width: 90%;
+			margin: 10px auto 0 auto;
 
 			@include breakpoint(medium) {
 				font-size: rem-calc(13);

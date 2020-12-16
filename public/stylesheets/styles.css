@@ -10215,10 +10215,11 @@ p {
         top: 60%; } }
     .feature .copy h2 {
       font-family: "AvenirLTPro-Heavy", sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.8125rem;
       font-weight: normal;
       letter-spacing: .5px;
-      margin-top: 10px; }
+      width: 90%;
+      margin: 10px auto 0 auto; }
       @media print, screen and (min-width: 40em) {
         .feature .copy h2 {
           font-size: 0.8125rem; } }
