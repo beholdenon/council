@@ -124,10 +124,14 @@ p {
 .sub-head {
 	font-family: $header-font-family;
 	color: $primary-color;
-	font-size: 24px;
+	font-size: 18px;
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 10px;
+
+	@include breakpoint(medium) {
+		font-size: 24px;
+	}
 
 	hr {
 		width: 55px;

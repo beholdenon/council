@@ -10107,10 +10107,13 @@ p {
 .sub-head {
   font-family: "ITC Avant Garde Gothic W01 Dm", sans-serif;
   color: #1a1d4a;
-  font-size: 24px;
+  font-size: 18px;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 10px; }
+  @media print, screen and (min-width: 40em) {
+    .sub-head {
+      font-size: 24px; } }
   .sub-head hr {
     width: 55px;
     border-top: 2px solid #BF0000;
