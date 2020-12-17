@@ -8,8 +8,6 @@ var sassMiddleware = require('node-sass-middleware');
 var indexRouter = require('./routes/index');
 var donateRouter = require('./routes/donate');
 const exphbs  = require('express-handlebars');
-const dotenv = require('dotenv');
-dotenv.config();
 
 var app = express();
 
