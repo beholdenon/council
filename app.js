@@ -14,6 +14,7 @@ var donateRouter = require('./routes/donate');
 const exphbs  = require('express-handlebars');
 
 var app = express();
+app.enable('trust proxy');
 
 // view engine setup
 app.engine('.hbs', exphbs({
