@@ -10195,7 +10195,15 @@ p {
 
 .small-header {
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto; }
+  .small-header .logo {
+    padding-left: 0;
+    padding-right: 0; }
+  .small-header .nav-container {
+    justify-content: flex-end;
+    display: flex; }
 
 .feature {
   position: relative;
@@ -10489,9 +10497,6 @@ p {
             margin-bottom: 0; }
           .news-section .news-item a .copy {
             margin-left: 20px; } }
-      .news-section .news-item a:hover {
-        transition: transform .3s;
-        transform: scale(1.03); }
     .news-section .news-item h4 {
       font-weight: bold;
       color: #1a1d4a;

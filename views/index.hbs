@@ -3,8 +3,8 @@
 		
 		<div class="cell feature">
     	<div class="copy">
-    		<h1 class="feature-headline" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="200">Fighting For The Residents Of Middle Village, Maspeth, Glendale, Ridgewood, Woodside &amp; Woodhaven</h1>
-    		<h2 data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-delay="800">RE-ELECT ROBERT HOLDEN FOR CITY COUNCIL DISTRICT 30</h2>
+    		<h1 class="feature-headline" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200">Fighting For The Residents Of Middle Village, Maspeth, Glendale, Ridgewood, Woodside &amp; Woodhaven</h1>
+    		<h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="800">RE-ELECT ROBERT HOLDEN FOR CITY COUNCIL DISTRICT 30</h2>
     	</div>
     	<a href="/">
     		<picture>
@@ -20,14 +20,7 @@
     		<h3>Your Generous Contribution Will Help To Protect Our Community</h3>
     		<p>Our city has lost its way and many of our elected officials have abandoned the policies that kept our streets safe for decades. I love our neighborhoods and I ask that you help me continue to fight to keep them safe and clean for our children and our grandchildren.</p>
 
-    		<ul class="donate-button-group">
-    			<li><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-secondary condensed full-width-small">Donate</a></li>
-    			<li class="show-for-medium"><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-primary condensed">$25</a></li>
-    			<li class="show-for-medium"><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-primary condensed">$50</a></li>
-    			<li class="show-for-medium"><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-primary condensed">$100</a></li>
-    			<li class="show-for-medium"><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-primary condensed">$175</a></li>
-    			<li class="show-for-medium"><a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button outline-white fill-primary condensed">Other</a></li>
-    		</ul>
+    		{{> donate-numbers}}
     	</div>
     </div>
 
@@ -51,7 +44,7 @@
 
 
     <div class="cell hp-section whyrunning-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-    	<h3 class="sub-head" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
+    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     		<hr />
     		Why I'm Running for Re-Election
     	</h3>
@@ -83,14 +76,13 @@
 
     <div class="cell hp-section news-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     	
-    	<h3 class="sub-head" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
+    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     		<hr />
     		In The News
     	</h3>
 
     	<div class="grid-x padding-x news-container">
-
-    		{{#each news}}
+    		{{#each homepage.0.fields.news}}
     		<div class="cell large-5 news-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
     			<a href="{{fields.url}}">
 	    			<img src="{{fields.thumb.fields.file.url}}" alt="{{fields.headline}}" />
@@ -106,5 +98,7 @@
     	</div>
 
     </div>
+
+
   </div>
 </div>

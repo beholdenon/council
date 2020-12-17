@@ -240,6 +240,18 @@ p {
 .small-header {
 	align-items: center;
   justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+
+  .logo {
+  	padding-left: 0;
+  	padding-right: 0;
+  }
+
+  .nav-container {
+  	justify-content: flex-end;
+    display: flex;
+  }
 }
 
 .feature {
@@ -647,11 +659,6 @@ p {
 				.copy {
 					margin-left: 20px;
 				}
-			}
-
-			&:hover {
-				transition: transform .3s;
-				transform: scale(1.03);
 			}
 		}
 
