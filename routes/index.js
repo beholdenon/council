@@ -16,7 +16,7 @@ router.use(function (req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	const absoluteRoot = req.protocol + '://' + req.get('host');
-	res.render('index', { 'homepage': req.homepage, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/holden-feature-desktop.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
+	res.render('index', { 'homepage': req.homepage, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
 });
 
 module.exports = router;
