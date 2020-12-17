@@ -7,11 +7,19 @@ var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
 var donateRouter = require('./routes/donate');
+const exphbs  = require('express-handlebars');
+const dotenv = require('dotenv');
+dotenv.config();
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', exphbs({
+  extname: '.hbs',
+  helpers: require('./config/handlebars-helpers'),
+  defaultLayout: 'layout', 
+  layoutsDir:path.join(__dirname, 'views'),
+}));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));

@@ -49,6 +49,30 @@
     	</div>
     </div>
 
-    
+    <div class="cell hp-section news-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    	
+    	<h3 class="sub-head" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
+    		<hr />
+    		In The News
+    	</h3>
+
+    	<div class="grid-x padding-x news-container">
+
+    		{{#each news}}
+    		<div class="cell large-5 news-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+    			<a href="{{fields.url}}">
+	    			<img src="{{fields.thumb.fields.file.url}}" alt="{{fields.headline}}" />
+	    			<div class="copy">
+	    				<h4>{{fields.headline}}</h4>
+	    				<p class="byline">By {{fields.author}}</p>
+	    				<p>{{trim fields.description}}...</p>
+	    			</div>
+	    		</a>
+    		</div>
+		    {{/each}}
+
+    	</div>
+
+    </div>
   </div>
 </div>
