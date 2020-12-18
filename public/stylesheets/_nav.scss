@@ -1,0 +1,146 @@
+.module-nav-hamburger {
+  background-color: transparent !important;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 2222;
+  
+  &:focus {
+    outline:0;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background: $secondary-color;
+    transition: background 0s 0.3s;
+    
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $secondary-color;
+      content: "";
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s;
+    }
+    &:before {
+      top: -7px;
+      transition-property: top, transform;
+    }
+    &:after {
+      bottom: -7px;
+      transition-property: bottom, transform;
+    }
+  }
+}
+
+.knock-out {
+	.module-nav-hamburger {
+		span {
+			background: #fff;
+			&:before, &:after {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.module-mobile-nav {
+	transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	width: 100vw;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	visibility: hidden;
+  display: none;
+	z-index: 42;
+  top: 80px;
+
+  @include breakpoint(medium) {
+    top: 90px;
+  }
+
+	ul {
+		list-style: none;
+		width: 100%;
+		margin: 0px 0 0 0;
+
+		li {
+			text-align: center;
+
+			a {
+				font-family: 'Avenir', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: em(.28);
+        color: #000;
+        text-align: center;
+        margin: 0 auto;
+        padding: 2px 7px;
+				font-size: 17px;
+				text-decoration: none;
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 20px 0;
+
+				&.active {
+          color: #fff;
+          background: #000;
+          text-decoration: none;
+			  }
+			}
+		}
+	}
+}
+
+#main.module-nav-is-active {
+  .module-nav-hamburger  {
+    span {
+    	background: none;
+
+    	&:before {
+    		transition-delay: 0s, 0.3s;
+    		top: 0;
+    		transform: rotate(45deg);
+    		background-color: $secondary-color;
+    	}
+    	&:after {
+    		transition-delay: 0s, 0.3s;
+    		bottom: 0;
+    		transform: rotate(-45deg);
+    		background-color: $secondary-color;
+    	}
+    }
+  }
+  .module-mobile-nav {
+  	
+  visibility: visible;
+  display: block;
+  }
+
+
+}

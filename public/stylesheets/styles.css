@@ -10069,6 +10069,117 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
 
+.module-nav-hamburger {
+  background-color: transparent !important;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 2222; }
+  .module-nav-hamburger:focus {
+    outline: 0; }
+  .module-nav-hamburger span {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background: #BF0000;
+    transition: background 0s 0.3s; }
+    .module-nav-hamburger span:before, .module-nav-hamburger span:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #BF0000;
+      content: "";
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s; }
+    .module-nav-hamburger span:before {
+      top: -7px;
+      transition-property: top, transform; }
+    .module-nav-hamburger span:after {
+      bottom: -7px;
+      transition-property: bottom, transform; }
+
+.knock-out .module-nav-hamburger span {
+  background: #fff; }
+  .knock-out .module-nav-hamburger span:before, .knock-out .module-nav-hamburger span:after {
+    background: #fff; }
+
+.module-mobile-nav {
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100vw;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  visibility: hidden;
+  display: none;
+  z-index: 42;
+  top: 80px; }
+  @media print, screen and (min-width: 40em) {
+    .module-mobile-nav {
+      top: 90px; } }
+  .module-mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    margin: 0px 0 0 0; }
+    .module-mobile-nav ul li {
+      text-align: center; }
+      .module-mobile-nav ul li a {
+        font-family: 'Avenir', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: em(0.28);
+        color: #000;
+        text-align: center;
+        margin: 0 auto;
+        padding: 2px 7px;
+        font-size: 17px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0; }
+        .module-mobile-nav ul li a.active {
+          color: #fff;
+          background: #000;
+          text-decoration: none; }
+
+#main.module-nav-is-active .module-nav-hamburger span {
+  background: none; }
+  #main.module-nav-is-active .module-nav-hamburger span:before {
+    transition-delay: 0s, 0.3s;
+    top: 0;
+    transform: rotate(45deg);
+    background-color: #BF0000; }
+  #main.module-nav-is-active .module-nav-hamburger span:after {
+    transition-delay: 0s, 0.3s;
+    bottom: 0;
+    transform: rotate(-45deg);
+    background-color: #BF0000; }
+
+#main.module-nav-is-active .module-mobile-nav {
+  visibility: visible;
+  display: block; }
+
 img {
   image-rendering: -moz-crisp-edges;
   /* Firefox */
@@ -10203,7 +10314,8 @@ p {
     padding-right: 0; }
   .small-header .nav-container {
     justify-content: flex-end;
-    display: flex; }
+    display: flex;
+    position: relative; }
 
 .feature {
   position: relative;

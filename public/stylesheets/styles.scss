@@ -80,6 +80,7 @@ $nav-font-size: 13px;
 @import "./fontawesome/fontawesome.scss";
 @import "./fontawesome/solid.scss";
 @import "./fontawesome/brands.scss";
+@import 'nav';
 
 img {
 	image-rendering: -moz-crisp-edges;         /* Firefox */
@@ -251,6 +252,7 @@ p {
   .nav-container {
   	justify-content: flex-end;
     display: flex;
+    position: relative;
   }
 }
 
