@@ -753,12 +753,12 @@ input, textarea {
 .news-item-large {
 	margin-bottom: 40px;
 	display: flex;
-    flex-direction: column;
+  flex-direction: column;
+  background: #fff;
 
 	img {
 		width: 100%;
 		height: auto;
-		margin-bottom: 20px;
 	}
 
 	.button {
@@ -771,6 +771,7 @@ input, textarea {
 		display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 20px;
 	}
 
 	.copy-link {

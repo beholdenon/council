@@ -10741,11 +10741,11 @@ input.error, textarea.error {
 .news-item-large {
   margin-bottom: 40px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background: #fff; }
   .news-item-large img {
     width: 100%;
-    height: auto;
-    margin-bottom: 20px; }
+    height: auto; }
   .news-item-large .button {
     margin-top: 20px;
     margin-bottom: auto;
@@ -10753,7 +10753,8 @@ input.error, textarea.error {
   .news-item-large .copy {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; }
+    flex-grow: 1;
+    padding: 20px; }
   .news-item-large .copy-link {
     display: flex;
     flex: 1;
