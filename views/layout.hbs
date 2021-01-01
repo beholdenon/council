@@ -26,7 +26,7 @@
     <link rel='stylesheet' href='/stylesheets/styles.css' />
   </head>
   <body>
-  	<div id="main" class="grid-container container-outer full">
+  	<div id="main" class="grid-container full">
 		  <div class="grid-x">
 		  	<div class="cell">
 
@@ -36,26 +36,26 @@
 
 		     
 		  		{{!- main container --}}
-		  		<div class="grid-container container-inner main-container">
+		  		<div class="grid-container main-container">
 		  			<div class="grid-x">
 		  				<div class="cell">
 
 					  		<div class="grid-container container-inner">
-								  <div class="grid-x small-header hide-for-large">
-								  	<div class="cell small-6 medium-3 ">
+								  <div class="grid-x small-header hide-for-large align-justify">
+								  	<div class="cell small-8 medium-6 flex-middle">
 								  		<a href="/">
 								  			<img src="/images/robert-holden-city-council-logo.png" class="logo" alt="Robert Holden For City Council - District 30">
 								  		</a>
 								  	</div>
-								  	<div class="cell small-5 medium-2 nav-container">
-								  		<!--
+								  	<div class="cell small-4 medium-2">
+								  		
 								  		<button id="module-nav-hamburger" class="module-nav-hamburger hide-for-large" aria-label="Menu" role="button" aria-controls="navigation" aria-expanded="true/false">
 								        <span>toggle menu</span>
-								      </button>-->
+								      </button>
 
-								  		<a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button solid-secondary">
+								  		<!--<a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button solid-secondary">
 								  			Donate
-								  		</a>
+								  		</a>-->
 								  	</div>
 								  </div>
 								  <div class="grid-x">
@@ -73,6 +73,8 @@
 								</div>
 
 					    	{{{body}}}
+					    	{{> donate-bar}}
+					    	{{> newsletter-bar}}
 
 					    	<div class="grid-container container-inner">
 					    		<div class="grid-x">

@@ -5,7 +5,7 @@ $foundation-palette: (
   secondary: #BF0000,
   success: #3adb76,
   warning: #ffae00,
-  alert: #cc4b37,
+  alert: #ff0000,
 );
 
 $body-font-bold-family: 'AvenirLTPro-Heavy', sans-serif;
@@ -15,6 +15,10 @@ $header-font-family: "ITC Avant Garde Gothic W01 Dm", sans-serif;
 $header-lineheight: 1.1;
 $header-margin-bottom: 0.3rem;
 $input-placeholder-color: #666;
+$input-border: 1px solid #999;
+$input-border-focus: 1px solid #999;
+$input-shadow: none;
+$input-shadow-focus: none;
 
 $header-styles: (
   small: (
@@ -34,6 +38,8 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
 );
+
+
 
 
 /* mixins */
@@ -82,12 +88,20 @@ $nav-font-size: 13px;
 @import "./fontawesome/brands.scss";
 @import 'nav';
 
+* {  box-sizing: border-box;}
+
 img {
 	image-rendering: -moz-crisp-edges;         /* Firefox */
 	image-rendering:   -o-crisp-edges;         /* Opera */
 	image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
 	image-rendering: crisp-edges;
 	-ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+input, button, .button {
+	&:focus {
+		outline: 0;
+	}
 }
 
 
@@ -106,7 +120,11 @@ p {
 }
 
 .feature-headline {
-	font-size: rem-calc(27);
+	font-size: rem-calc(22);
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(27);
+	}
 
 	@include breakpoint(large) {
 		font-size: rem-calc(38);
@@ -139,6 +157,10 @@ p {
 		border-top: 2px solid $secondary-color;
 		margin: 5px auto;
 	}
+
+	&.text-left {
+		text-align: left;
+	}
 }
 
 .sub-head-desc {
@@ -158,6 +180,62 @@ p {
 	text-decoration: underline;
 }
 
+.news-headline {
+	font-weight: bold;
+	color: $primary-color;
+	font-size: rem-calc(20);
+
+	&.large {
+		font-size: rem-calc(25);
+	}
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(16);
+
+		&.large {
+			font-size: rem-calc(20);
+		}
+	}
+}
+
+.byline {
+	font-family: $body-font-bold-family;
+	font-size: rem-calc(11);
+	color: #717171;
+	margin-bottom: 3px;
+}
+
+.news-desc {
+	margin-bottom: 0;
+}
+
+.loud {
+	text-transform: uppercase;
+	color: $secondary-color;
+	font-size: rem-calc(37);
+
+	@include breakpoint(medium up) {
+		font-size: rem-calc(57);
+	}
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+input, textarea {
+	&.error {
+		border: 2px solid #ff0000;
+	}
+}
+
+.section-padding {
+	padding: 20px 0;
+}
+
+.bg-grey {
+	background: #f0f0f0;
+}
 
 .container-inner {
 	padding: 0;
@@ -166,6 +244,7 @@ p {
 .main-container {
 	background: #fff;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+	padding: 0;
 }
 
 .nav-bar {
@@ -175,6 +254,11 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+}
+
+.flex-middle {
+	display: flex;
+	align-items: center;
 }
 
 .logo-outer {
@@ -192,7 +276,6 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid #aaa;
 }
 
 .top-nav {
@@ -211,6 +294,8 @@ p {
 			text-transform: uppercase;
 			padding: 12px 9px;
 			font-size: $nav-font-size;
+			letter-spacing: 1px;
+			display: block;
 
 			&:hover {
 				color: darken(#fff, 40%);
@@ -227,8 +312,10 @@ p {
 			}
 
 			&.social {
-				padding: 9px;
-				font-size: 22px;
+				@include breakpoint(large) {
+					padding: 9px;
+					font-size: rem-calc(22);
+				}
 			}
 		}
 	}
@@ -239,20 +326,15 @@ p {
 }
 
 .small-header {
-	align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  margin: 0 auto;
+  height: 140px;
 
-  .logo {
-  	padding-left: 0;
-  	padding-right: 0;
+  >div {
+  	position: relative;
   }
 
-  .nav-container {
-  	justify-content: flex-end;
-    display: flex;
-    position: relative;
+  .logo {
+  	height:auto;
+  	width: 250px;
   }
 }
 
@@ -357,9 +439,14 @@ p {
 
 	li {
 		margin-left: -2px;
+		position: relative;
 
 		@include breakpoint(small only) {
 			width: 100%;
+		}
+
+		a {
+			position: relative;
 		}
 
 		&:first-child {
@@ -394,22 +481,11 @@ p {
 
 	form {
 		input {
-			border: none;
 			margin-bottom: 10px;
+			border: none;
 
-			&.error {
-				border: 2px solid #00ff00;
-			}
-		}
-
-		.double-inputs {
-			display: flex;
-			flex-direction: row;
-
-			input {
-				&:first-child {
-					margin-right: 7px;
-				}
+			&:focus {
+				border: none;
 			}
 		}
 	}
@@ -480,6 +556,10 @@ p {
 	padding-left: 0;
 	padding-right: 0;
 	z-index: 2;
+
+	.sub-head-desc {
+		max-width: 600px;
+	}
 
 	.video-outer {
 		justify-content: center;
@@ -633,6 +713,10 @@ p {
 		margin: 20px 0;
 	}
 
+	.button {
+		margin-top: 20px;
+	}
+
 	.news-item {
 		background: #fff;
 		min-height: 100px;
@@ -663,27 +747,36 @@ p {
 				}
 			}
 		}
+	}
+}
 
-		h4 {
-			font-weight: bold;
-			color: $primary-color;
-			font-size: 15px;
+.news-item-large {
+	margin-bottom: 40px;
+	display: flex;
+    flex-direction: column;
 
-			@include breakpoint(medium) {
-				font-size: 16px;
-			}
-		}
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+	}
 
-		p {
-			margin-bottom: 0;
-		}
+	.button {
+		margin-top: 20px;
+		margin-bottom: auto;
+		flex-grow: 0;
+	}
 
-		.byline {
-			font-family: $body-font-bold-family;
-			font-size: rem-calc(11);
-			color: #717171;
-			margin-bottom: 3px;
-		}
+	.copy {
+		display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+	}
+
+	.copy-link {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
 	}
 }
 
@@ -711,24 +804,28 @@ p {
 	}
 
 	.form {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		width: 80%;
 
-		@include breakpoint(medium) {
-			width: 50%;
-		}
 
-		@include breakpoint(large) {
-			width: 35%;
+		form {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 
 	.input-email {
 		margin-bottom: 0;
-		height: 47px;
+		height: 44px;
+		width: 60%;
+
+		@include breakpoint(medium) {
+			width: 300px;
+		}
+	}
+
+	p {
+		margin: 0;
 	}
 }
 
@@ -742,6 +839,7 @@ p {
   display: inline-block;
   text-align: center;
   margin: 0;
+  text-rendering: auto;
 
   &:hover {
   	transition: background .3s color .3s;
@@ -819,6 +917,10 @@ p {
     background: none;
     color: #fff;
 
+    &:focus {
+    	border: 2px solid #fff;
+    }
+
     &:hover {
     	background: #fff;
     	color: $primary-color;
@@ -861,6 +963,101 @@ p {
 	padding: 4px 10px 2px 10px;
 	margin: 30px auto;
 	display: inline-block;
+}
+
+
+.form-contact {
+	padding: 20px 0;
+}
+
+
+.checkbox-list {
+	margin: 10px 0 20px 0;
+	list-style: none;
+	padding: 0;
+}
+
+
+.feature-btns {
+	margin-top: -30px;
+	z-index: 2;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+
+		li {
+			border-right: 2px solid #fff;
+			border-top: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+
+			&:first-child {
+				border-left: 2px solid #fff;
+			}
+
+			@include breakpoint(large) {
+				border-right: 3px solid #fff;
+				border-top: 3px solid #fff;
+				border-bottom: 3px solid #fff;
+
+				&:first-child {
+					border-left: 3px solid #fff;
+				}
+			}
+		}
+
+		a {
+			padding: 15px 10px;
+			font-size: rem-calc(13);
+
+			@include breakpoint(medium) {
+				padding: 18px 30px;
+				font-size: rem-calc(17);
+			}
+		}
+	}
+
+	i {
+		margin-right: 3px;
+	}
+}
+
+.sub-head-section {
+	padding: 0 0 20px 0;
+
+	@include breakpoint(medium) {
+		padding: 0 0 30px 0;
+	}
+}
+
+.three-photos {
+	padding-bottom: 30px;
+
+	.grid-x {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.cell {
+		padding: 5px;
+	}
+}
+
+.form-container {
+	margin: 0 auto;
+	padding: 30px;
+	background: #fff;
+
+	>div {
+		margin: 0 auto;
+
+		@include breakpoint(medium) {
+			width: 80%;
+		}
+	}
 }
 
 /* ICONS */
@@ -908,4 +1105,79 @@ p {
 	    content: fa-content($fa-var-play);
 	  }
   }
+
+  &.bullhorn {
+  	&:before {
+	    content: fa-content($fa-var-bullhorn);
+	  }
+  }
+
+  &.check-circle {
+  	&:before {
+	    content: fa-content($fa-var-check-circle);
+	  }
+  }
+
+  &.comment {
+  	&:before {
+	    content: fa-content($fa-var-comment);
+	  }
+  }
+}
+
+.contact-section {
+	margin-bottom: 30px;
+}
+
+.double-inputs {
+			@include breakpoint(medium) {
+	  		display: flex;
+				flex-direction: row;
+			}
+
+			input, div {
+				width: 100%;
+
+				@include breakpoint(medium) {
+					&:first-child {
+						margin-right: 7px;
+					}
+				}
+			}
+		}
+
+
+.social-buttons {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+
+	@include breakpoint(large) {
+		display: flex;
+		flex-direction: row;
+	}
+
+	li {
+		border: 2px solid #fff;
+		text-align: center;
+		margin-bottom: -2px;
+		background: $primary-color;
+
+		@include breakpoint(large) {
+			width: 25%;
+			margin-bottom: 0;
+			margin-left: -2px;
+		}
+
+		a {
+			font-size: rem-calc(14);
+			padding: 13px 0 10px 0;
+			display: block;
+			font-family: $body-font-bold-family;
+			text-transform: uppercase;
+			color: #fff;
+		}
+	}
 }

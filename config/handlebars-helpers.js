@@ -10,5 +10,8 @@ module.exports = {
   },
   trim: function(passedString) {
   	return passedString.substring(0, 90);
+  },
+  trimlarge: function(passedString) {
+    return passedString.substring(0, 200);
   }
 }

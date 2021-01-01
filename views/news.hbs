@@ -1,0 +1,42 @@
+<div class="grid-container container-inner bg-grey">
+  <div class="grid-x align-center">
+   {{> feature smallimg="holden-feature-3-small.jpg" largeimg="holden-feature-3.jpg"}}
+   {{> feature-buttons}}
+
+    <div class="cell small-11 medium-10 large-9 section-padding">
+      <div class="grid-x align-center">
+        
+        <div class="cell sub-head-section">
+          <h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <hr />
+            News
+          </h3>
+        </div>
+
+        <div class="cell" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+          <div class="grid-x grid-padding-x align-center">
+
+            {{#each news}}
+              <div class="cell medium-6 large-6 news-item-large" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                <a href="{{fields.url}}">
+                  <img src="{{fields.thumb.fields.file.url}}" alt="{{fields.headline}}" />
+                </a>
+                <div class="copy">
+                  <a href="{{fields.url}}" class="copy-link">
+                    <h4 class="news-headline large">{{fields.headline}}</h4>
+                    <p class="byline">By {{fields.author}}</p>
+                    <p class="news-desc">{{trimlarge fields.description}}...</p>
+                  </a>
+                  <a href="{{fields.url}}" class="button outline-primary">Read More</a>
+                </div>
+              </div>
+              {{/each}}
+             
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

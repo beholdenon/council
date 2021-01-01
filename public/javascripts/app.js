@@ -29,14 +29,146 @@ $(function() {
 		});
 	});
 
+	$( "#bar-join-form" ).on( "submit", function( event ) {
+	  event.preventDefault();
+		$.ajax({
+			type: $( this ).attr('method'),
+			url: $( this ).attr('action'),
+			data: $( this ).serialize(),
+			cache: false,
+			dataType: 'json',
+			contentType: 'application/json; charset=utf-8',
+			error: function (err) { console.log(err); },
+			success: function (data) {
+				console.log(data);
+				if (data.result === 'success') {
+					$( "#bar-join-form" ).hide();
+					$( '#bar-join-form-message').html("Thank you for signing up!");
+				}
+				else {
+					if(!validateEmail($(' #bar-join-form #mce-EMAIL-bar').val())) {
+						$(' #bar-join-form #mce-EMAIL-bar').addClass('error');
+					}
+				}
+			},
+		});
+	});
+
 	function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 	}
 
 	$('.module-nav-hamburger').on('click', () => {
+	  $('body').toggleClass('module-nav-is-active');
 	  $('#main').toggleClass('module-nav-is-active');
 	});
+
+	$( "#contact-form" ).on( "submit", function( event ) {
+	  event.preventDefault();
+
+	  var numErrors = 0;
+	  var data = {};
+	  data.first_name = $('#first_name').val();
+	  data.last_name = $('#last_name').val();
+	  data.email = $('#email').val();
+	  data.phone = $('#phone').val();
+	  data.comments = $('#comments').val();
+
+	  if(data.first_name === "") {
+	  	numErrors += 1;
+	  	$('#first_name').addClass("error");
+	  }
+
+	  if(data.last_name === "") {
+	  	numErrors += 1;
+	  	$('#last_name').addClass("error");
+	  }
+
+	  if(data.email === "" || !validateEmail(data.email)) {
+	  	numErrors += 1;
+	  	$('#email').addClass("error");
+	  }
+
+	  if(data.comments === "") {
+	  	numErrors += 1;
+	  	$('#comments').addClass("error");
+	  }
+
+	  if(numErrors === 0) {
+			$.ajax({
+				type: $( this ).attr('method'),
+				url: $( this ).attr('action'),
+				data: JSON.stringify(data),
+				cache: false,
+				contentType: 'application/json; charset=utf-8',
+				error: function (err) { alert(); console.log(err); },
+				success: function (data) {
+					console.log(data);
+	-				$('#contact-message').html('Thank you for your comments.')
+					$('#contact-form').hide();
+				},
+			});
+		}
+
+		});
+
+	$( "#volunteer-form" ).on( "submit", function( event ) {
+	  event.preventDefault();
+
+	  var numErrors = 0;
+	  var data = {};
+	  data.first_name = $('#first_name').val();
+	  data.last_name = $('#last_name').val();
+	  data.email = $('#email').val();
+	  data.phone = $('#phone').val();
+	  var values = new Array();
+		$.each($("input[name='help']:checked"), function() {
+		  values.push($(this).val());
+		});
+	  data.help = values;
+
+	  if(data.first_name === "") {
+	  	numErrors += 1;
+	  	$('#first_name').addClass("error");
+	  }
+
+	  if(data.last_name === "") {
+	  	numErrors += 1;
+	  	$('#last_name').addClass("error");
+	  }
+
+	  if(data.email === "" || !validateEmail(data.email)) {
+	  	numErrors += 1;
+	  	$('#email').addClass("error");
+	  }
+
+	  if(data.help.length === 0) {
+	  	numErrors += 1;
+	  	$('.help-checkbox input').addClass("error");
+	  }
+
+	  if(numErrors === 0) {
+	  	$.ajax({
+				type: $( this ).attr('method'),
+				url: $( this ).attr('action'),
+				data: JSON.stringify(data),
+				cache: false,
+				contentType: 'application/json; charset=utf-8',
+				error: function (err) { alert(); console.log(err); },
+				success: function (data) {
+					console.log(data);
+					$('#volunteer-title').html('Thank You!');
+					$('#volunteer-message').html('Thank you for volunteering. You will be contacted by a campaign volunteer shortly.');
+					$('#volunteer-form').hide();
+				},
+			});
+	  }
+
+
+	});
+
+
 });
 
 AOS.init();
