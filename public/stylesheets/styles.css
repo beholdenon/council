@@ -10678,13 +10678,19 @@ input.error, textarea.error {
       justify-content: center;
       align-items: center; }
       .news-section .news-item a img {
+        width: 100%;
+        height: auto;
         margin-bottom: 20px; }
       @media print, screen and (min-width: 40em) {
         .news-section .news-item a {
           display: flex; }
           .news-section .news-item a img {
             width: 30%;
-            margin-bottom: 0; }
+            margin-bottom: 0; } }
+    @media print, screen and (min-width: 40em) and (min-width: 64em) {
+      .news-section .news-item a img {
+        width: 40%; } }
+      @media print, screen and (min-width: 40em) {
           .news-section .news-item a .copy {
             margin-left: 20px; } }
 
