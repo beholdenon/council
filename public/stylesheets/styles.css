@@ -10134,19 +10134,37 @@ readers do not read off random characters that represent icons */
   left: -99.99vw; }
   .module-mobile-nav nav {
     height: 100%; }
-  .module-mobile-nav ul {
+  .module-mobile-nav .top-nav {
     list-style: none;
     width: 100%;
     margin: 0px 0 0 0;
     display: flex;
     height: 100%;
     flex-direction: column;
-    flex: 1; }
-    .module-mobile-nav ul li {
+    flex: 1;
+    transform: translate3d(0, 0, 0);
+    transition: background-color .2s, transform 0.3s; }
+    .module-mobile-nav .top-nav > li {
       text-align: center;
       width: 100%;
-      flex: 1; }
-      .module-mobile-nav ul li a {
+      flex: 1;
+      background: #1a1d4a; }
+      .module-mobile-nav .top-nav > li.donate-button a {
+        background: #BF0000; }
+      .module-mobile-nav .top-nav > li.social {
+        background: #1a1d4a; }
+        .module-mobile-nav .top-nav > li.social ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          list-style: none;
+          flex: 1;
+          height: 100%; }
+          .module-mobile-nav .top-nav > li.social ul li {
+            width: 15%; }
+            .module-mobile-nav .top-nav > li.social ul li a {
+              border-bottom: none; }
+      .module-mobile-nav .top-nav > li a {
         font-size: 1.0625rem;
         background: #1a1d4a;
         color: #fff;
@@ -10157,12 +10175,10 @@ readers do not read off random characters that represent icons */
         height: 100%;
         padding: 20px 0;
         border-bottom: 1px solid #fff;
-        transform: translate3d(0, 0, 0);
-        transition: background-color .2s, transform 0.3s;
         display: flex;
         align-items: center;
         justify-content: center; }
-        .module-mobile-nav ul li a.active {
+        .module-mobile-nav .top-nav > li a.active {
           color: #fff;
           background: #000;
           text-decoration: none; }
@@ -10183,73 +10199,7 @@ body.module-nav-is-active {
     transform: rotate(-45deg);
     background-color: #BF0000; }
 
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(1) a {
-  transition-delay: 0s, 0.1s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(2) a {
-  transition-delay: 0s, 0.2s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(3) a {
-  transition-delay: 0s, 0.3s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(4) a {
-  transition-delay: 0s, 0.4s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(5) a {
-  transition-delay: 0s, 0.5s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(6) a {
-  transition-delay: 0s, 0.6s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(7) a {
-  transition-delay: 0s, 0.7s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(8) a {
-  transition-delay: 0s, 0.8s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(9) a {
-  transition-delay: 0s, 0.9s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(10) a {
-  transition-delay: 0s, 1s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(11) a {
-  transition-delay: 0s, 1.1s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(12) a {
-  transition-delay: 0s, 1.2s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(13) a {
-  transition-delay: 0s, 1.3s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(14) a {
-  transition-delay: 0s, 1.4s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(15) a {
-  transition-delay: 0s, 1.5s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(16) a {
-  transition-delay: 0s, 1.6s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(17) a {
-  transition-delay: 0s, 1.7s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(18) a {
-  transition-delay: 0s, 1.8s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(19) a {
-  transition-delay: 0s, 1.9s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(20) a {
-  transition-delay: 0s, 2s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(21) a {
-  transition-delay: 0s, 2.1s; }
-
-#main.module-nav-is-active .module-mobile-nav ul > li:nth-of-type(22) a {
-  transition-delay: 0s, 2.2s; }
-
-#main.module-nav-is-active .module-mobile-nav ul li a {
+#main.module-nav-is-active .module-mobile-nav .top-nav {
   transform: translate3d(100vw, 0, 0); }
 
 * {
