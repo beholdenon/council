@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
   const first_name = req.body.first_name;
-  const last_name = req.body.lastor_name;
+  const last_name = req.body.last_name;
   const email = req.body.email;
   const phone = req.body.phone;
   const help = req.body.help;

@@ -72,6 +72,7 @@ $(function() {
 	  event.preventDefault();
 
 	  var numErrors = 0;
+	  var form = $(this);
 	  var data = {};
 	  data.first_name = $('#first_name').val();
 	  data.last_name = $('#last_name').val();
@@ -103,8 +104,8 @@ $(function() {
 	  	grecaptcha.ready(function() {
         grecaptcha.execute(captcha_site_key, {action: 'submit'}).then(function(token) {
             $.ajax({
-							type: $( this ).attr('method'),
-							url: $( this ).attr('action'),
+							type: form.attr('method'),
+							url: form.attr('action'),
 							data: JSON.stringify(data),
 							cache: false,
 							contentType: 'application/json; charset=utf-8',
@@ -125,17 +126,23 @@ $(function() {
 	  event.preventDefault();
 
 	  var numErrors = 0;
+	  var form = $(this);
 	  var data = {};
+
+	  // get values for inputs
 	  data.first_name = $('#first_name').val();
 	  data.last_name = $('#last_name').val();
 	  data.email = $('#email').val();
 	  data.phone = $('#phone').val();
+
+	  // get values for checkbox
 	  var values = new Array();
 		$.each($("input[name='help']:checked"), function() {
 		  values.push($(this).val());
 		});
 	  data.help = values;
 
+	  // error checking
 	  if(data.first_name === "") {
 	  	numErrors += 1;
 	  	$('#first_name').addClass("error");
@@ -157,11 +164,13 @@ $(function() {
 	  }
 
 	  if(numErrors === 0) {
+
+	  	// google captcha
 	  	grecaptcha.ready(function() {
         grecaptcha.execute(captcha_site_key, {action: 'submit'}).then(function(token) {
         	$.ajax({
-						type: $( this ).attr('method'),
-						url: $( this ).attr('action'),
+						type: form.attr('method'),
+						url: form.attr('action'),
 						data: JSON.stringify(data),
 						cache: false,
 						contentType: 'application/json; charset=utf-8',
