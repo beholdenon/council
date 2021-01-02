@@ -10496,7 +10496,8 @@ a.underline {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  position: relative; }
   .donate-button-group li {
     margin-left: -2px;
     position: relative; }
@@ -10585,7 +10586,7 @@ a.underline {
     max-width: 600px; }
   .whyrunning-hp .video-outer {
     justify-content: center;
-    margin: 30px auto; }
+    margin: 20px auto 10px auto; }
   .whyrunning-hp .video-container {
     position: relative; }
     .whyrunning-hp .video-container .icon {
@@ -10605,18 +10606,18 @@ a.underline {
   z-index: -1; }
 
 .facebook-hp {
-  background: transparent linear-gradient(180deg, #F0F0F0 0%, #EFEFEF 100%) 0% 0% no-repeat padding-box; }
+  background: transparent linear-gradient(180deg, #F0F0F0 0%, #EFEFEF 100%) 0% 0% no-repeat padding-box;
+  padding-bottom: 40px; }
   .facebook-hp ul {
     list-style: none;
     padding: 0;
-    margin: 30px 0;
+    margin: 30px 0 10px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
 
 .social-item {
   background: #fff;
-  border-radius: 10px;
   text-align: center;
   width: 100%;
   margin-bottom: 1rem; }
@@ -10646,10 +10647,23 @@ a.underline {
   .social-item .inner {
     width: 90%;
     margin: 20px auto;
-    text-align: left; }
+    text-align: left;
+    display: flex;
+    flex: 1;
+    flex-direction: column; }
+    .social-item .inner .description {
+      display: flex;
+      flex: 1; }
+    .social-item .inner p {
+      display: flex;
+      flex: 1; }
   .social-item .fb-controls {
     margin: 10px 0;
     width: 40%; }
+  .social-item .social-photo {
+    background-size: cover; }
+    .social-item .social-photo img {
+      opacity: 0; }
   @media print, screen and (min-width: 40em) {
     .social-item {
       width: calc((100% / 3) - (3rem / 3));
@@ -11023,6 +11037,9 @@ a.underline {
   margin-right: -5px; }
   .two-photos .grid-x .cell {
     padding: 0 5px; }
+
+footer {
+  width: 100%; }
 
 .footer {
   display: flex;

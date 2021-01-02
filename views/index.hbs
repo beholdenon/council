@@ -1,5 +1,5 @@
 <div class="grid-container container-inner">
-	<div class="grid-x">
+	<div class="grid-x align-center">
 		
    {{> feature smallimg="holden-feature-mobile.jpg" largeimg="holden-feature-desktop.jpg"}}
 
@@ -31,6 +31,34 @@
     	</div>
     </div>
 
+    <div class="cell hp-section news-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    	
+    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    		<hr />
+    		In The News
+    	</h3>
+
+    	<div class="grid-x news-container">
+    		{{#each homepage.0.fields.news}}
+    		<div class="cell medium-11 large-5 news-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+    			<article>
+    			<a href="{{fields.url}}">
+	    			<img src="{{fields.thumb.fields.file.url}}" alt="{{fields.headline}}" />
+	    			<div class="copy">
+	    				<h4 class="news-headline">{{fields.headline}}</h4>
+	    				<p class="byline">By {{fields.author}}</p>
+	    				<p class="news-desc">{{trim fields.description}}...</p>
+	    			</div>
+	    		</a>
+	    	</article>
+    		</div>
+		    {{/each}}
+		  </div>
+
+         <a href="/news" class="button outline-primary align-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">View More News</a>
+
+    	</div>
+
 
     <div class="cell hp-section whyrunning-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -39,8 +67,10 @@
     	</h3>
     	<p class="sub-head-desc" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">I've been honored to represent this district for the last three years but there's more to do. I’m excited to announce that I’m running for re-election.</p>
 
+
+
     	<div class="grid-x video-outer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-    		<div class="small-10 large-8">
+    		<div class="cell small-10 large-8 video-outer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     			<div id="fb-root"></div>
 					  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
@@ -64,33 +94,26 @@
 
 
 
-    <div class="cell hp-section news-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-    	
-    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-    		<hr />
-    		In The News
-    	</h3>
+    
 
-    	<div class="grid-x padding-x news-container">
-    		{{#each homepage.0.fields.news}}
-    		<div class="cell large-5 news-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
-    			<a href="{{fields.url}}">
-	    			<img src="{{fields.thumb.fields.file.url}}" alt="{{fields.headline}}" />
-	    			<div class="copy">
-	    				<h4 class="news-headline">{{fields.headline}}</h4>
-	    				<p class="byline">By {{fields.author}}</p>
-	    				<p class="news-desc">{{trim fields.description}}...</p>
-	    			</div>
-	    		</a>
-    		</div>
-		    {{/each}}
 
-            <a href="/news" class="button outline-primary align-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">View More News</a>
+    	<div class="cell hp-section facebook-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+	    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+	    		<hr />
+	    		Latest From Facebook
+	    	</h3>
 
-    	</div>
+	    	<div class="grid-x align-center">
+	    		<div class="cell medium-12 large-10">
+			    	<ul class="facebookfeed">
+			    	</ul>
+		    	</div>
+		    </div>
+
+	    	<a href="https://www.facebook.com/bobholdencitycouncil" class="button outline-primary align-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">View More On Facebook</a>
+	    </div>
 
     </div>
-
 
   </div>
 </div>
