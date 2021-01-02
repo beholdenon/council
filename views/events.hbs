@@ -1,0 +1,37 @@
+<div class="grid-container container-inner bg-grey">
+  <div class="grid-x align-center">
+   {{> feature smallimg="robert-holden-street-small@2x.jpg" largeimg="robert-holden-street@2x.jpg"}}
+   {{> feature-buttons}}
+
+    <div class="cell small-11 medium-10 large-9 section-padding">
+      <div class="grid-x align-center">
+
+        {{> page-title title="Events" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor urna quam, eu efficitur justo consectetur luctus. Sed magna dolor, tristique at risus vel, lobortis hendrerit nulla."}}
+
+        <div class="cell" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+          <div class="grid-x grid-margin-x align-left">
+
+            {{#each events}}
+              <div class="cell medium-6 event-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
+                <img src="{{fields.photo.fields.file.url}}" alt="{{fields.eventTitle}}" />
+                <div class="copy">
+                  <p class="event-date">{{formatdate fields.date}}</p>
+                  <h4 class="sub-head text-left">{{fields.eventTitle}}</h4>
+                  <p>{{fields.venue}} | <a class="underline" href="https://www.google.com/maps/place/{{fields.address}}">View Map</a></p>
+                  <p class="event-desc">{{fields.description}}</p>
+                  {{#if fields.donation}}
+                  <p><strong>Suggested Donation: {{fields.donation}}</strong></p>
+                  {{/if}}
+                  <a href="https://www.nycvotes.org/campaigns/robertholden/contributions/new" class="button">Donate</a>
+                </div>
+              </div>
+              {{/each}}
+             
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

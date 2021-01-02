@@ -8,13 +8,13 @@ var nodemailer = require('nodemailer');
 
 router.get('/', function(req, res, next) {
   var absoluteRoot = req.protocol + '://' + req.get('host');
-  res.render('volunteer', { 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
+  res.render('volunteer', { 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Volunteer - Re-Elect Robert Holden For City Council - District 30' });
 });
 
 
 router.post('/', function(req, res){
   const first_name = req.body.first_name;
-  const last_name = req.body.last_name;
+  const last_name = req.body.lastor_name;
   const email = req.body.email;
   const phone = req.body.phone;
   const help = req.body.help;

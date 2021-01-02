@@ -6,9 +6,11 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 
+
 router.get('/', function(req, res, next) {
   var absoluteRoot = req.protocol + '://' + req.get('host');
-  res.render('contact', { 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
+
+  res.render('contact', { 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Contact - Re-Elect Robert Holden For City Council - District 30' });
 });
 
 
@@ -18,8 +20,6 @@ router.post('/', function(req, res){
   const email = req.body.email;
   const phone = req.body.phone;
   const comments = req.body.comments;
-
-  console.log('endpoint hit00');
 
   var transporter = nodemailer.createTransport({
   service: 'gmail',

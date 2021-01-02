@@ -3,6 +3,9 @@
 
 
 $(function() {
+
+	var captcha_site_key = "6LfORh4aAAAAAKHUUOF4EkaZGGPJ5HOqOdzDjMWE";
+
 	$( "#hp-join-form" ).on( "submit", function( event ) {
 	  event.preventDefault();
 		$.ajax({
@@ -62,6 +65,7 @@ $(function() {
 	$('.module-nav-hamburger').on('click', () => {
 	  $('body').toggleClass('module-nav-is-active');
 	  $('#main').toggleClass('module-nav-is-active');
+	  window.scrollTo(0, 0);
 	});
 
 	$( "#contact-form" ).on( "submit", function( event ) {
@@ -96,19 +100,23 @@ $(function() {
 	  }
 
 	  if(numErrors === 0) {
-			$.ajax({
-				type: $( this ).attr('method'),
-				url: $( this ).attr('action'),
-				data: JSON.stringify(data),
-				cache: false,
-				contentType: 'application/json; charset=utf-8',
-				error: function (err) { alert(); console.log(err); },
-				success: function (data) {
-					console.log(data);
-	-				$('#contact-message').html('Thank you for your comments.')
-					$('#contact-form').hide();
-				},
-			});
+	  	grecaptcha.ready(function() {
+        grecaptcha.execute(captcha_site_key, {action: 'submit'}).then(function(token) {
+            $.ajax({
+							type: $( this ).attr('method'),
+							url: $( this ).attr('action'),
+							data: JSON.stringify(data),
+							cache: false,
+							contentType: 'application/json; charset=utf-8',
+							error: function (err) { alert(); console.log(err); },
+							success: function (data) {
+								console.log(data);
+				-				$('#contact-message').html('Thank you for your comments.')
+								$('#contact-form').hide();
+							},
+						});
+        });
+      });
 		}
 
 		});
@@ -149,19 +157,23 @@ $(function() {
 	  }
 
 	  if(numErrors === 0) {
-	  	$.ajax({
-				type: $( this ).attr('method'),
-				url: $( this ).attr('action'),
-				data: JSON.stringify(data),
-				cache: false,
-				contentType: 'application/json; charset=utf-8',
-				error: function (err) { alert(); console.log(err); },
-				success: function (data) {
-					console.log(data);
-					$('#volunteer-title').html('Thank You!');
-					$('#volunteer-message').html('Thank you for volunteering. You will be contacted by a campaign volunteer shortly.');
-					$('#volunteer-form').hide();
-				},
+	  	grecaptcha.ready(function() {
+        grecaptcha.execute(captcha_site_key, {action: 'submit'}).then(function(token) {
+        	$.ajax({
+						type: $( this ).attr('method'),
+						url: $( this ).attr('action'),
+						data: JSON.stringify(data),
+						cache: false,
+						contentType: 'application/json; charset=utf-8',
+						error: function (err) { alert(); console.log(err); },
+						success: function (data) {
+							console.log(data);
+							$('#volunteer-title').html('Thank You!');
+							$('#volunteer-message').html('Thank you for volunteering. You will be contacted by a campaign volunteer shortly.');
+							$('#volunteer-form').hide();
+						},
+					});
+				});
 			});
 	  }
 

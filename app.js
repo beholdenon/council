@@ -9,12 +9,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+/* routes */
 var indexRouter = require('./routes/index');
 var emailRouter = require('./routes/email');
 var donateRouter = require('./routes/donate');
 var contactRouter = require('./routes/contact');
 var volunteerRouter = require('./routes/volunteer');
 var newsRouter = require('./routes/news');
+var eventsRouter = require('./routes/events');
+var bioRouter = require('./routes/bio');
+
+/* handlebars */
 const exphbs  = require('express-handlebars');
 
 var app = express();
@@ -47,6 +52,8 @@ app.use('/contact', contactRouter);
 app.use('/email', emailRouter);
 app.use('/volunteer', volunteerRouter);
 app.use('/news', newsRouter);
+//app.use('/events', eventsRouter);
+//app.use('/bio', bioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
