@@ -15,7 +15,7 @@
               <div class="cell medium-6 event-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">
                 <img src="{{fields.photo.fields.file.url}}" alt="{{fields.eventTitle}}" />
                 <div class="copy">
-                  <p class="event-date">{{formatdate fields.date}}</p>
+                  <p class="event-date">{{formatdate fields.date true}}</p>
                   <h4 class="sub-head text-left">{{fields.eventTitle}}</h4>
                   <p>{{fields.venue}} | <a class="underline" href="https://www.google.com/maps/place/{{fields.address}}">View Map</a></p>
                   <p class="event-desc">{{fields.description}}</p>

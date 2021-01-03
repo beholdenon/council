@@ -20,10 +20,18 @@
     			<input type="hidden" name="b_name" id="b_name" value="7d00529cc08ebc48d83096c4f">
     			<input type="hidden" name="id" value="5e3c61dfbc">
     			<div class="double-inputs">
-    				<input type="text" placeholder="First Name" name="FNAME" id="mce-FNAME" />
-    				<input type="text" placeholder="Last Name" name="LNAME" id="mce-LNAME" />
+    				<div>
+    					<label for="mce-FNAME">First Name</label>
+    					<input type="text" placeholder="First Name" name="FNAME" id="mce-FNAME" />
+    				</div>
+    				<div>
+    					<label for="mce-LNAME">Last Name</label>
+    					<input type="text" placeholder="Last Name" name="LNAME" id="mce-LNAME" />
+    				</div>
     			</div>
+    			<label for="mce-EMAIL">E-mail Address</label>
     			<input type="email" value="" name="EMAIL" placeholder="E-mail Address" id="mce-EMAIL">
+    			<label for="mce-MMERGE5">Mobile Phone</label>
     			<input type="text" placeholder="Mobile Phone (optional)" name="MMERGE5" value="" id="mce-MMERGE5" />
     			<p class="disclaimer">By submitting your cell phone number you are agreeing to receive periodic text messages from this organization. Message and data rates may apply. Text HELP for more information. Text STOP to stop receiving message</p> 
     			<input type="submit" value="Sign Up" class="button outline-white full-width" />
@@ -47,7 +55,7 @@
 	    			<div class="copy">
 	    				<h4 class="news-headline">{{fields.headline}}</h4>
 	    				<p class="byline">By {{fields.author}}</p>
-	    				<p class="news-desc">{{trim fields.description}}...</p>
+	    				<p class="news-desc">{{trim fields.description 90}}...</p>
 	    			</div>
 	    		</a>
 	    	</article>
@@ -94,9 +102,6 @@
 
 
 
-    
-
-
     	<div class="cell hp-section facebook-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 	    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 	    		<hr />
@@ -105,7 +110,29 @@
 
 	    	<div class="grid-x align-center">
 	    		<div class="cell medium-12 large-10">
-			    	<ul class="facebookfeed">
+			    	<ul>
+			    		{{#each facebook}}
+							<li class="social-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+								<div class="header">
+										<img src="/images/fb-icon.jpg" alt="Robert Holden 2021" class="social-profile-pic" />
+									<div class="social-account-info">
+										<h4><a href="https://www.facebook.com/bobholdencitycouncil">Robert Holden</a></h4>
+										<p>{{formatdate created_time false}}</p>
+									</div>
+								</div>
+								<div class="social-photo" style="background-image: url('{{full_picture}}');">
+									<a href="{{permalink_url}}">
+										<img src="/images/social-sizer.gif" alt="Photo Placeholder" />
+									</a>
+								</div>
+								<div class="inner">
+									<a href="${fb.permalink_url}" class="description">
+										<p>{{trim message 170}}...</p>
+									</a>
+									<a href="{{permalink_url}}" class="button fill-primary align-center">View on Facebook</a>
+								</div>
+							</li>
+							{{/each}}
 			    	</ul>
 		    	</div>
 		    </div>

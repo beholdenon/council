@@ -64,7 +64,6 @@ $nav-font-size: 13px;
 
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/3ccaeb");
-  
 @font-face {
   font-family: 'AvenirLTPro-Heavy';
   src: url('../webfonts/AvenirLTPro-Heavy/font.woff2') format('woff2'), url('../webfonts/AvenirLTPro-Heavy/font.woff') format('woff');
@@ -112,7 +111,7 @@ body {
 
 /* typography */
 p {
-	font-size: rem-calc(14);
+	font-size: rem-calc(15);
 	font-weight: 500;
 
 	@include breakpoint(medium) {
@@ -520,6 +519,10 @@ a {
 	}
 
 	form {
+		label {
+			display: none;
+		}
+
 		input {
 			margin-bottom: 10px;
 			border: none;

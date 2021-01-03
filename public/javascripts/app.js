@@ -189,54 +189,6 @@ $(function() {
 
 	});
 
-function fbFetch(){
-    var url = "https://graph.facebook.com/bobholdencitycouncil/posts?fields=full_picture,message,permalink_url,created_time&access_token=EAAP2wiwvYbkBANmWgYcxFvQQ80ckmzqFPsh4Df5vi9sbsyYM718koNAyXRxMZAt8N1JYEvTiaNI6rkZBe6xPYl1fcXSuIJFSTZBPduq08RlhkFlL1X0QftsTfsG1fR4OckSc0VMkB3W1kDKWyoDBfaKuTxrfhjAM4vKvomZCz2ZCSR6Wbxdcq1Re6WUbhjnMZD&limit=3&callback=?"; // Limit can be changed to suit your needs
-
-    $.getJSON(url,function(json){ // Get the data from the feed
-      console.log(json); // Print it out into the console
-      var html = "";
-  $.each(json.data,function(i,fb){
-  	var date = formatDate(new Date(fb.created_time));
-    html += `<li class="social-item">
-    			<div class="header">
-    					<img src="/images/fb-icon.jpg" alt="Robert Holden 2021" class="social-profile-pic" />
-    				<div class="social-account-info">
-    					<h4><a href="https://www.facebook.com/bobholdencitycouncil">Robert Holden</a></h4>
-    					<p>${date}</p>
-    				</div>
-    			</div>
-    			<div class="social-photo" style="background-image: url('${fb.full_picture}');">
-    				<a href="${fb.permalink_url}">
-    					<img src="/images/social-sizer.gif" />
-    				</a>
-    			</div>
-    			<div class="inner">
-    				<a href="${fb.permalink_url}" class="description">
-    					<p>${fb.message.substring(0, 170)}...</p>
-    				</a>
-    				<a href="${fb.permalink_url}" class="button fill-primary align-center">View on Facebook</a>
-    			</div>
-    		</li>`;
-
-  });
-  $('.facebookfeed').html(html);
-  });
-}; // end fbFetch
-fbFetch(); // Call the function
-
-function formatDate(date) {
-	var month= ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
-}
-
-
 });
 
 AOS.init();

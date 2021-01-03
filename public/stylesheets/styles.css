@@ -10225,7 +10225,7 @@ body {
 
 /* typography */
 p {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500; }
   @media print, screen and (min-width: 40em) {
     p {
@@ -10526,6 +10526,8 @@ a.underline {
     .hp-signup-bar .inner h3 {
       text-transform: uppercase;
       font-size: 42px; }
+  .hp-signup-bar form label {
+    display: none; }
   .hp-signup-bar form input {
     margin-bottom: 10px;
     border: none; }
