@@ -10166,7 +10166,7 @@ readers do not read off random characters that represent icons */
               border-bottom: none; }
       .module-mobile-nav .top-nav > li a {
         font-family: "AvenirLTPro-Heavy", sans-serif;
-        font-size: 1.0625rem;
+        font-size: 1.25rem;
         background: #1a1d4a;
         color: #fff;
         text-align: center;
