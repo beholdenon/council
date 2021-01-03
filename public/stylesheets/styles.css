@@ -10225,14 +10225,10 @@ body {
 
 /* typography */
 p {
-  font-size: 0.9375rem;
-  font-weight: 500; }
-  @media print, screen and (min-width: 40em) {
-    p {
-      font-size: 0.9375rem; } }
+  font-size: 0.9375rem; }
 
 .feature-headline {
-  font-size: 1.25rem; }
+  font-size: 1.5rem; }
   @media print, screen and (min-width: 40em) {
     .feature-headline {
       font-size: 1.5625rem; } }
@@ -10240,20 +10236,13 @@ p {
     .feature-headline {
       font-size: 2.0625rem; } }
 
-.disclaimer {
-  text-align: left;
-  font-size: 0.6875rem; }
-  @media print, screen and (min-width: 40em) {
-    .disclaimer {
-      font-size: 0.8125rem; } }
-
 .sub-head {
   font-family: "ITC Avant Garde Gothic W01 Dm", sans-serif;
   color: #1a1d4a;
-  font-size: 1.125rem;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-size: 1.125rem; }
   @media print, screen and (min-width: 40em) {
     .sub-head {
       font-size: 1.5rem; } }
@@ -10622,7 +10611,9 @@ a.underline {
   background: #fff;
   text-align: center;
   width: 100%;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column; }
   .social-item .header {
     display: flex;
     flex-direction: row;

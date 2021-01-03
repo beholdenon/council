@@ -112,15 +112,10 @@ body {
 /* typography */
 p {
 	font-size: rem-calc(15);
-	font-weight: 500;
-
-	@include breakpoint(medium) {
-		font-size: rem-calc(15);
-	}
 }
 
 .feature-headline {
-	font-size: rem-calc(20);
+	font-size: rem-calc(24);
 
 	@include breakpoint(medium) {
 		font-size: rem-calc(25);
@@ -131,22 +126,13 @@ p {
 	}
 }
 
-.disclaimer {
-	text-align: left;
-	font-size: rem-calc(11);
-
-	@include breakpoint(medium) {
-		font-size: rem-calc(13);
-	}
-}
-
 .sub-head {
 	font-family: $header-font-family;
 	color: $primary-color;
-	font-size: rem-calc(18);
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 10px;
+	font-size: rem-calc(18);
 
 	@include breakpoint(medium) {
 		font-size: rem-calc(24);
@@ -652,6 +638,8 @@ a {
 	text-align: center;
 	width: 100%;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 
 	.header {
 		display: flex;
