@@ -1220,6 +1220,12 @@ a {
   flex-direction: column;
   background: #fff;
 
+  article {
+  	display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
 	img {
 		width: 100%;
 		height: auto;

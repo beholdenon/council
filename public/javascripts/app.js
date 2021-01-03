@@ -212,7 +212,7 @@ function fbFetch(){
     			</div>
     			<div class="inner">
     				<a href="${fb.permalink_url}" class="description">
-    					<p>${fb.message.substring(0, 140)}...</p>
+    					<p>${fb.message.substring(0, 170)}...</p>
     				</a>
     				<a href="${fb.permalink_url}" class="button fill-primary align-center">View on Facebook</a>
     			</div>
