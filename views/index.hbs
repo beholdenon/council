@@ -127,7 +127,7 @@
 								</div>
 								<div class="inner">
 									<a href="${fb.permalink_url}" class="description">
-										<p>{{trim message 170}}...</p>
+										<p>{{#if message}}{{trim message 170}}...{{/if}}</p>
 									</a>
 									<a href="{{permalink_url}}" class="button fill-primary align-center">View on Facebook</a>
 								</div>
