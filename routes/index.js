@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 var express = require('express');
 var router = express.Router();
 var homepage = require('../services/homepage.js');
+var quotes = require('../services/quotes.js');
 var FB = require('fb');
 FB.setAccessToken(process.env.FB_TOKEN);
 
@@ -28,13 +29,25 @@ router.use(function (req, res, next) {
     next();
   });
 
+  quotes.getQuotes().then(function (quotesCollection) {
+    console.log(quotesCollection.items.length);
+    var num = Math.floor(Math.random() * quotesCollection.items.length);
+    console.log(num);
+    req.quotes = quotesCollection.items[num];
+    console.log(req.quotes);
+  }).
+  catch(function (err) {
+    console.log('quotes.js - getHomepage (line 23) error:', JSON.stringify(err,null,2))
+    next();
+  });
+
 
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	const absoluteRoot = req.protocol + '://' + req.get('host');
-  res.render('index', { 'facebook': req.facebook, 'homepage': req.homepage, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
+  res.render('index', { 'facebook': req.facebook, 'homepage': req.homepage, 'quotes': req.quotes, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
 });
 
 module.exports = router;
