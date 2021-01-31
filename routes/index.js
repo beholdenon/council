@@ -30,11 +30,9 @@ router.use(function (req, res, next) {
   });
 
   quotes.getQuotes().then(function (quotesCollection) {
-    console.log(quotesCollection.items.length);
     var num = Math.floor(Math.random() * quotesCollection.items.length);
-    console.log(num);
     req.quotes = quotesCollection.items[num];
-    console.log(req.quotes);
+    req.allQuotes = quotesCollection.items;
   }).
   catch(function (err) {
     console.log('quotes.js - getHomepage (line 23) error:', JSON.stringify(err,null,2))
@@ -47,7 +45,7 @@ router.use(function (req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	const absoluteRoot = req.protocol + '://' + req.get('host');
-  res.render('index', { 'facebook': req.facebook, 'homepage': req.homepage, 'quotes': req.quotes, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
+  res.render('index', { 'facebook': req.facebook, 'homepage': req.homepage, 'allQuotes': req.allQuotes, 'quotes': req.quotes, 'url': absoluteRoot + req.url, 'image': absoluteRoot + '/images/og-image.jpg', 'title': 'Re-Elect Robert Holden For City Council - District 30' });
 });
 
 module.exports = router;

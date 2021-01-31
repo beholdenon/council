@@ -189,6 +189,30 @@ $(function() {
 
 	});
 
+	function setQuoteBar() {
+		if($('.quote-bar').length){
+			var currentIndex = 0;
+			var totalQuotes = $('.quote-bar .inner').length;
+			setInterval(function() {				
+				
+				// update currentIndex
+				if(currentIndex < (totalQuotes -1)) {
+					currentIndex += 1;
+				}
+				else {
+					currentIndex = 0;
+				}
+
+				// hide old quote and show new one
+				$('.quote-bar .inner.show').removeClass('show').removeClass('fade-in');
+				$('.quote-bar .inner').eq(currentIndex).addClass('show').addClass('fade-in');
+
+			}, 7000);
+		}
+	}
+
+	setQuoteBar();
+
 });
 
 AOS.init();

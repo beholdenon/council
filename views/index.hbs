@@ -67,13 +67,8 @@
 
     	</div>
 
-
-    	 <div class="cell quote-bar">
-    	<div class="inner" data-aos="fade-left" data-aos-anchor-placement="top-bottom">
-	    	<h4>{{quotes.fields.quote}}<h4>
-	    	<p class="attribute">-{{quotes.fields.attribution}}</p>
-	    </div>
-    </div>
+    	{{>quote-bar allQuotes=allQuotes quote=quotes.fields.quote attribution=quotes.fields.attribution}}
+    	
 
 
 

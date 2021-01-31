@@ -230,6 +230,32 @@ p {
 	text-decoration: underline;
 }
 
+.quote-style {
+	color: #fff;
+	text-align: center;
+	font-size: rem-calc(18);
+	line-height: rem-calc(22);
+	font-family: "ITC Avant Garde Gothic W01 Md";
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(23);
+		line-height: rem-calc(30);
+	}
+}
+
+.quote-attribute {
+	color: #08ABF4;
+	text-align: center;
+	font-family: "ITC Avant Garde Gothic W01 Dm";
+	font-size: rem-calc(13);
+	margin-bottom: 0;
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(16);
+	}
+}
+
+
 input, textarea {
 	&.error {
 		border: 2px solid #ff0000;
@@ -724,6 +750,13 @@ a {
 		width: 80%;
 		padding: 30px 0;
 		margin: 0 auto;
+		display: none;
+
+		&.show {
+			display: block;
+			opacity: 1;
+
+		}
 
 		@include breakpoint(medium) {
 			padding: 50px 0;
@@ -731,28 +764,6 @@ a {
 
 		@include breakpoint(large) {
 			width: 75%;
-		}
-
-		h4 {
-			color: #fff;
-			text-align: center;
-			font-size: rem-calc(18);
-			font-family: "ITC Avant Garde Gothic W01 Md";
-
-			@include breakpoint(medium) {
-				font-size: rem-calc(23);
-			}
-		}
-
-		.attribute {
-			color: #08ABF4;
-			font-family: "ITC Avant Garde Gothic W01 Dm";
-			font-size: rem-calc(13);
-			margin-bottom: 0;
-
-			@include breakpoint(medium) {
-				font-size: rem-calc(16);
-			}
 		}
 	}
 }
@@ -1329,4 +1340,37 @@ footer {
 	a {
 		text-decoration: underline;
 	}
+}
+
+.fade-in {
+	animation: fadeIn ease 1.5s;
+	-webkit-animation: fadeIn ease 1.5s;
+	-moz-animation: fadeIn ease 1.5s;
+	-o-animation: fadeIn ease 1.5s;
+	-ms-animation: fadeIn ease 1.5s;
+}
+
+@keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
