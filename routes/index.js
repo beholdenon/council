@@ -14,7 +14,7 @@ router.use(function (req, res, next) {
     req.homepage = homepageCollection.items;
 
     FB.api(
-      "/bobholdencitycouncil/published_posts?limit=3",
+      "/bobholdencitycouncil/published_posts?limit=3&date_format=U",
       { fields: ['full_picture', 'message', 'permalink_url', 'created_time'] },
       function (response) {
         if (response && !response.error) {
