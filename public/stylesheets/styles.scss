@@ -726,17 +726,17 @@ a {
 		margin: 0 auto;
 
 		@include breakpoint(medium) {
-			width: 70%;
+			padding: 50px 0;
 		}
 
 		@include breakpoint(large) {
-			width: 60%;
+			width: 75%;
 		}
 
 		h4 {
 			color: #fff;
 			text-align: center;
-			font-size: rem-calc(17);
+			font-size: rem-calc(18);
 			font-family: "ITC Avant Garde Gothic W01 Md";
 
 			@include breakpoint(medium) {

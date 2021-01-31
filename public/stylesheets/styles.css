@@ -10671,14 +10671,14 @@ a.underline {
     margin: 0 auto; }
     @media print, screen and (min-width: 40em) {
       .quote-bar .inner {
-        width: 70%; } }
+        padding: 50px 0; } }
     @media print, screen and (min-width: 64em) {
       .quote-bar .inner {
-        width: 60%; } }
+        width: 75%; } }
     .quote-bar .inner h4 {
       color: #fff;
       text-align: center;
-      font-size: 1.0625rem;
+      font-size: 1.125rem;
       font-family: "ITC Avant Garde Gothic W01 Md"; }
       @media print, screen and (min-width: 40em) {
         .quote-bar .inner h4 {
