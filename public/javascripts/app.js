@@ -134,6 +134,7 @@ $(function() {
 	  data.last_name = $('#last_name').val();
 	  data.email = $('#email').val();
 	  data.phone = $('#phone').val();
+	  data.party = $('#party').val();
 
 	  // get values for checkbox
 	  var values = new Array();

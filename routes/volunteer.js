@@ -17,7 +17,9 @@ router.post('/', function(req, res){
   const last_name = req.body.last_name;
   const email = req.body.email;
   const phone = req.body.phone;
+  const party = req.body.party;
   const help = req.body.help;
+  console.log(party);
 
   var transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -31,7 +33,7 @@ router.post('/', function(req, res){
     from: 'Robert Holden<info@holdenforcitycouncil.com>',
     to: 'info@holdenforcitycouncil.com',
     subject: 'Volunteer Form Submission',
-    html: 'First Name: ' + first_name + '<br />Last Name: ' + last_name + '<br />Email Address: ' + email + '<br />Phone Number: ' + phone + '<br />How Would you Like to Help: ' + help
+    html: 'First Name: ' + first_name + '<br />Last Name: ' + last_name + '<br />Email Address: ' + email + '<br />Phone Number: ' + phone + '<br />Party: ' + party + '<br />How Would you Like to Help: ' + help
   };
 
   transporter.sendMail(mailOptions, function(error, info){
