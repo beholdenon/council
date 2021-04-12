@@ -1318,7 +1318,7 @@ a {
 
 	li {
 		width: 33%;
-		padding: 0 5px;
+		padding: 0 8px 10px 8px;
 
 		@include breakpoint(medium) {
 			width: 25%;
@@ -1332,7 +1332,7 @@ a {
 	h3 {
 		font-family: $body-font-family;
 		font-size: rem-calc(13);
-		margin-top: 5px;
+		margin-top: 10px;
 	}
 }
 
