@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-
+const { body, validationResult } = require('express-validator');
 
 router.get('/', function(req, res, next) {
   var absoluteRoot = req.protocol + '://' + req.get('host');
@@ -14,20 +14,32 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/', function(req, res){
-  const first_name = req.body.first_name;
-  const last_name = req.body.last_name;
-  const email = req.body.email;
-  const phone = req.body.phone;
-  const comments = req.body.comments;
+router.post('/', 
+  body('first_name').isLength({ min: 2 }),
+  body('last_name').isLength({ min: 2 }),
+  body('email').isEmail(),
+  body('comments').isLength({ min: 2 }),
 
-  var transporter = nodemailer.createTransport({
-  service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_ADDRESS,
-      pass: process.env.EMAIL_PASSWORD
+  function(req, res){
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
-  });
+
+    const first_name = req.body.first_name;
+    const last_name = req.body.last_name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const comments = req.body.comments;
+
+    var transporter = nodemailer.createTransport({
+    service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASSWORD
+      }
+    });
 
   var mailOptions = {
     from: 'Robert Holden<info@holdenforcitycouncil.com>',

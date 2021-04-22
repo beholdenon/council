@@ -68,7 +68,7 @@ $(function() {
 	  window.scrollTo(0, 0);
 	});
 
-	$( "#contact-form" ).on( "submit", function( event ) {
+$( "#contact-form" ).on( "submit", function( event ) {
 	  event.preventDefault();
 
 	  var numErrors = 0;
@@ -121,6 +121,7 @@ $(function() {
 		}
 
 		});
+		
 
 	$( "#volunteer-form" ).on( "submit", function( event ) {
 	  event.preventDefault();
