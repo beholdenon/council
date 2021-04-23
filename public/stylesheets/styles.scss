@@ -1070,6 +1070,8 @@ a {
 	    content: fa-content($fa-var-youtube);
 	  }
   }
+
+
 }
 
 .icon {
@@ -1103,6 +1105,24 @@ a {
   &.comment {
   	&:before {
 	    content: fa-content($fa-var-comment);
+	  }
+  }
+
+  &.award {
+  	&:before {
+	    content: fa-content($fa-var-award);
+	  }
+  }
+
+  &.users {
+  	&:before {
+	    content: fa-content($fa-var-users);
+	  }
+  }
+
+  &.chart-line {
+  	&:before {
+	    content: fa-content($fa-var-chart-line);
 	  }
   }
 }
@@ -1371,6 +1391,63 @@ footer {
 
 	a {
 		text-decoration: underline;
+	}
+}
+
+.circle-callouts-outer {
+	margin-top: 20px;
+}
+.circle-callouts {
+	.cell {
+
+		.circle {
+			border-radius: 1000px;
+			background: $primary-color;
+			width: 100%;
+	  	padding-bottom: 100%;
+	  	position: relative;
+	  	margin-bottom: 10px;
+
+	  	.inner {
+	  		position: absolute;
+	  		width: 70%;
+	  		top: 50%;
+	  		left: 50%;
+	  		transform: translateY(-50%) translateX(-50%);
+	  		
+	  		@include breakpoint(large up) {
+	  			width: 65%;
+	  		}
+
+	  		h3 {
+	  			font-size: rem-calc(14);
+					color: #fff;
+					line-height: 1.3em;
+
+					@include breakpoint(medium only) {
+						font-size: rem-calc(15);
+					}
+
+					@media (min-width: 1024px) and (max-width: 1228px) { 
+						font-size: rem-calc(12);
+					}
+
+					@media (min-width: 1229px) { 
+						font-size: rem-calc(16);
+					}
+	  		}
+
+	  		.icon {
+	  			color: #fff;
+	  			font-size: rem-calc(30);
+	  			margin-bottom: 20px;
+
+	  			@include breakpoint(medium up) {
+	  				font-size: rem-calc(40);
+					}
+	  		}
+	  	}
+	  }
 	}
 }
 

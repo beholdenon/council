@@ -190,7 +190,6 @@ $( "#contact-form" ).on( "submit", function( event ) {
 
 
 	});
-
 	function setQuoteBar() {
 		if($('.quote-bar').length){
 			var currentIndex = 0;

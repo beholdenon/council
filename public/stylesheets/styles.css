@@ -10908,6 +10908,15 @@ a.underline {
 .icon.comment:before {
   content: "\f075"; }
 
+.icon.award:before {
+  content: "\f559"; }
+
+.icon.users:before {
+  content: "\f0c0"; }
+
+.icon.chart-line:before {
+  content: "\f201"; }
+
 .contact-section {
   margin-bottom: 30px; }
 
@@ -11098,6 +11107,46 @@ footer {
   font-family: "AvenirLTPro-Heavy", sans-serif; }
   .copyright a {
     text-decoration: underline; }
+
+.circle-callouts-outer {
+  margin-top: 20px; }
+
+.circle-callouts .cell .circle {
+  border-radius: 1000px;
+  background: #1a1d4a;
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  margin-bottom: 10px; }
+  .circle-callouts .cell .circle .inner {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%); }
+    @media print, screen and (min-width: 64em) {
+      .circle-callouts .cell .circle .inner {
+        width: 65%; } }
+    .circle-callouts .cell .circle .inner h3 {
+      font-size: 0.875rem;
+      color: #fff;
+      line-height: 1.3em; }
+      @media print, screen and (min-width: 40em) and (max-width: 63.99875em) {
+        .circle-callouts .cell .circle .inner h3 {
+          font-size: 0.9375rem; } }
+      @media (min-width: 1024px) and (max-width: 1228px) {
+        .circle-callouts .cell .circle .inner h3 {
+          font-size: 0.75rem; } }
+      @media (min-width: 1229px) {
+        .circle-callouts .cell .circle .inner h3 {
+          font-size: 1rem; } }
+    .circle-callouts .cell .circle .inner .icon {
+      color: #fff;
+      font-size: 1.875rem;
+      margin-bottom: 20px; }
+      @media print, screen and (min-width: 40em) {
+        .circle-callouts .cell .circle .inner .icon {
+          font-size: 2.5rem; } }
 
 .fade-in {
   animation: fadeIn ease 1.5s;
