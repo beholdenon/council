@@ -11120,7 +11120,7 @@ footer {
   margin-bottom: 10px; }
   .circle-callouts .cell .circle .inner {
     position: absolute;
-    width: 70%;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%); }
@@ -11128,7 +11128,7 @@ footer {
       .circle-callouts .cell .circle .inner {
         width: 65%; } }
     .circle-callouts .cell .circle .inner h3 {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       color: #fff;
       line-height: 1.3em; }
       @media print, screen and (min-width: 40em) and (max-width: 63.99875em) {
@@ -11142,11 +11142,12 @@ footer {
           font-size: 1rem; } }
     .circle-callouts .cell .circle .inner .icon {
       color: #fff;
-      font-size: 1.875rem;
-      margin-bottom: 20px; }
+      font-size: 1.25rem;
+      margin-bottom: 10px; }
       @media print, screen and (min-width: 40em) {
         .circle-callouts .cell .circle .inner .icon {
-          font-size: 2.5rem; } }
+          font-size: 2.5rem;
+          margin-bottom: 20px; } }
 
 .fade-in {
   animation: fadeIn ease 1.5s;
