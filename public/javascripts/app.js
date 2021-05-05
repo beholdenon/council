@@ -165,6 +165,7 @@ $( "#contact-form" ).on( "submit", function( event ) {
 	  	$('.help-checkbox input').addClass("error");
 	  }
 
+
 	  if(numErrors === 0) {
 
 	  	// google captcha
