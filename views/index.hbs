@@ -43,7 +43,7 @@
         
         <h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <hr />
-            A Common Sense Democrat
+            Lifelong Democrat
         </h3>
         <p class="sub-head-desc" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100">Robert Holden has provided a voice of reason, advocating for safer streets, cleaner parks, better schools, seniors, homeowners and working families. As a lifelong resident of this district, he has always put community interests ahead of special interests and his record in the city council proves that.</p>
 
@@ -92,6 +92,50 @@
         </div>
     </div>
 
+<div class="cell hp-section facebook-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <hr />
+                Latest From Facebook
+            </h3>
+
+            <div class="grid-x align-center">
+                <div class="cell medium-12 large-10">
+                    <ul>
+                        {{#each facebook}}
+                            <li class="social-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                <div class="header">
+                                        <img src="/images/fb-icon.jpg" alt="Robert Holden 2021" class="social-profile-pic" />
+                                    <div class="social-account-info">
+                                        <h4><a href="https://www.facebook.com/bobholdencitycouncil">Robert Holden</a></h4>
+
+                                        <p>{{formatdate created_time}}</p>
+                                    </div>
+                                </div>
+                                <div class="social-photo" style="background-image: url('{{full_picture}}');">
+                                    <a href="{{permalink_url}}">
+                                        <img src="/images/social-sizer.gif" alt="Photo Placeholder" />
+                                    </a>
+                                </div>
+                                <div class="inner">
+                                    <a href="${fb.permalink_url}" class="description">
+                                        <p>{{#if message}}{{trim message 170}}...{{/if}}</p>
+                                    </a>
+                                    <a href="{{permalink_url}}" class="button fill-primary align-center">View on Facebook</a>
+                                </div>
+                            </li>
+                            {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <a href="https://www.facebook.com/bobholdencitycouncil" class="button outline-primary align-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">View More On Facebook</a>
+        </div>
+
+
+
+        {{>quote-bar allQuotes=allQuotes quote=quotes.fields.quote attribution=quotes.fields.attribution}}
+        
+
 
          <div class="cell hp-section news-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     	
@@ -121,30 +165,7 @@
 
     	</div>
 
-    	{{>quote-bar allQuotes=allQuotes quote=quotes.fields.quote attribution=quotes.fields.attribution}}
-    	
-
-
-        <div class="cell hp-section endorsements-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <hr />
-                Endorsements
-            </h3>
-
-            <div class="grid-x align-center">
-                <div class="cell medium-12 large-10">
-                    <ul class="endorsements-list">
-                        {{#each endorsements}}
-                        <li data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                            <img src="{{this.fields.logo.fields.file.url}}" alt="{{name}}" class="endorsement-logo" />
-                            <h3>{{this.fields.name}}</h3>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+      
 
 
 
@@ -183,47 +204,29 @@
 
 
 
-        
+          <div class="cell hp-section endorsements-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <hr />
+                Endorsements
+            </h3>
+
+            <div class="grid-x align-center">
+                <div class="cell medium-12 large-10">
+                    <ul class="endorsements-list">
+                        {{#each endorsements}}
+                        <li data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                            <img src="{{this.fields.logo.fields.file.url}}" alt="{{name}}" class="endorsement-logo" />
+                            <h3>{{this.fields.name}}</h3>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
 
 
-    	<div class="cell hp-section facebook-hp" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-	    	<h3 class="sub-head" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-	    		<hr />
-	    		Latest From Facebook
-	    	</h3>
 
-	    	<div class="grid-x align-center">
-	    		<div class="cell medium-12 large-10">
-			    	<ul>
-			    		{{#each facebook}}
-							<li class="social-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-								<div class="header">
-										<img src="/images/fb-icon.jpg" alt="Robert Holden 2021" class="social-profile-pic" />
-									<div class="social-account-info">
-										<h4><a href="https://www.facebook.com/bobholdencitycouncil">Robert Holden</a></h4>
-
-										<p>{{formatdate created_time}}</p>
-									</div>
-								</div>
-								<div class="social-photo" style="background-image: url('{{full_picture}}');">
-									<a href="{{permalink_url}}">
-										<img src="/images/social-sizer.gif" alt="Photo Placeholder" />
-									</a>
-								</div>
-								<div class="inner">
-									<a href="${fb.permalink_url}" class="description">
-										<p>{{#if message}}{{trim message 170}}...{{/if}}</p>
-									</a>
-									<a href="{{permalink_url}}" class="button fill-primary align-center">View on Facebook</a>
-								</div>
-							</li>
-							{{/each}}
-			    	</ul>
-		    	</div>
-		    </div>
-
-	    	<a href="https://www.facebook.com/bobholdencitycouncil" class="button outline-primary align-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">View More On Facebook</a>
-	    </div>
+    	
 
     </div>
 
