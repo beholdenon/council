@@ -429,6 +429,53 @@ a {
 				font-size: rem-calc(17);
 			}
 		}
+
+		h3 {
+			background: $secondary-color;
+			color: #fff;
+			display: inline-block;
+			padding: 4px 6px;
+			font-size: 12px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			letter-spacing: 1px;
+
+			@include breakpoint(large) {
+				font-size: rem-calc(18);
+			}
+		}
+	}
+}
+
+.feature-bar {
+	background: #006ebf;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	text-align: center;
+
+	@include breakpoint(large) {
+		justify-content: flex-end;
+		padding-right: 40px;
+	}
+
+	h1 {
+		font-size: rem-calc(15);
+		color: #fff;
+		margin: 0;
+
+		@include breakpoint(large) {
+			font-size: rem-calc(18);
+		}
+
+		small {
+			color: #fff;
+			display: block;
+			font-size: rem-calc(14);
+			margin-top: 10px;
+		}
 	}
 }
 

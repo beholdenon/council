@@ -10463,6 +10463,43 @@ a.underline {
       @media print, screen and (min-width: 64em) {
         .feature .copy h2 {
           font-size: 1.0625rem; } }
+    .feature .copy h3 {
+      background: #BF0000;
+      color: #fff;
+      display: inline-block;
+      padding: 4px 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 1px; }
+      @media print, screen and (min-width: 64em) {
+        .feature .copy h3 {
+          font-size: 1.125rem; } }
+
+.feature-bar {
+  background: #006ebf;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  text-align: center; }
+  @media print, screen and (min-width: 64em) {
+    .feature-bar {
+      justify-content: flex-end;
+      padding-right: 40px; } }
+  .feature-bar h1 {
+    font-size: 0.9375rem;
+    color: #fff;
+    margin: 0; }
+    @media print, screen and (min-width: 64em) {
+      .feature-bar h1 {
+        font-size: 1.125rem; } }
+    .feature-bar h1 small {
+      color: #fff;
+      display: block;
+      font-size: 0.875rem;
+      margin-top: 10px; }
 
 .hp-donate-bar {
   background: #1a1d4a;
