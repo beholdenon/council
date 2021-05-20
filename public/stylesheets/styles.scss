@@ -351,6 +351,7 @@ a {
 			&.donate-button {
 				background: $secondary-color;
 				margin-right: 20px;
+				margin-left: 10px;
 
 				&:hover {
 					background: darken($secondary-color, 20%);

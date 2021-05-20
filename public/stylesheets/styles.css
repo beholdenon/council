@@ -10409,7 +10409,8 @@ a.underline {
       transition: background .5s, color .5s; }
     .top-nav li a.donate-button {
       background: #BF0000;
-      margin-right: 20px; }
+      margin-right: 20px;
+      margin-left: 10px; }
       .top-nav li a.donate-button:hover {
         background: #590000; }
     @media print, screen and (min-width: 64em) {
